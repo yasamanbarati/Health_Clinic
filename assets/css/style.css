@@ -15,6 +15,9 @@ a {
 /*--------------------------------------------------------------
 # Navigation Menu
 --------------------------------------------------------------*/
+.header-scrolled {
+  background-color: linear-gradient(0deg, var(--bg-01) 0%, var(--bg-02) 100%);
+}
 .logo h1 a{
   color: white;
   font-weight: 900;
