@@ -1,7 +1,7 @@
-:root{
-  --bg-01: #ff7cf0;
-  --bg-02: #008d7e;
-  --bg-03: rgba(132, 208, 255, 0.867);
+:root {
+  --bg-01: #ffbaa8;
+  --bg-02: #7fc6da;
+  --bg-03: #7fdac8;
 }
 body {
   font-family: "Open Sans", sans-serif;
@@ -18,8 +18,8 @@ a {
 .header-scrolled {
   background-color: linear-gradient(0deg, var(--bg-01) 0%, var(--bg-02) 100%);
 }
-.logo h1 a{
-  color: white;
+.logo h1 a {
+  color: #000;
   font-weight: 900;
 }
 .navbar {
@@ -35,24 +35,30 @@ a {
 .navbar li {
   position: relative;
 }
-.navbar a, .navbar a:focus {
+.navbar a,
+.navbar a:focus {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 5px 15px 7px 15px;
   margin-left: 5px;
   font-size: 14px;
-  color: #fff;
+  font-weight: 500 !important;
+  color: #000 !important;
   white-space: nowrap;
   transition: 0.3s;
   border-radius: 50px;
 }
-.navbar a i, .navbar a:focus i {
+.navbar a i,
+.navbar a:focus i {
   font-size: 12px;
   line-height: 0;
   margin-left: 5px;
 }
-.navbar a:hover, .navbar .active, .navbar .active:focus, .navbar li:hover > a {
+.navbar a:hover,
+.navbar .active,
+.navbar .active:focus,
+.navbar li:hover > a {
   border: 1px solid #ec7de7;
 }
 .navbar .dropdown ul {
@@ -65,7 +71,7 @@ a {
   z-index: 99;
   opacity: 0;
   visibility: hidden;
-  background: #fff;
+  background: #000;
   box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
   transition: 0.3s;
   border-radius: 15px;
@@ -82,8 +88,10 @@ a {
 .navbar .dropdown ul a i {
   font-size: 12px;
 }
-.navbar .dropdown ul a:hover, .navbar .dropdown ul .active:hover, .navbar .dropdown ul li:hover > a {
-  color: #fff;
+.navbar .dropdown ul a:hover,
+.navbar .dropdown ul .active:hover,
+.navbar .dropdown ul li:hover > a {
+  color: #000;
 }
 .navbar .dropdown:hover > ul {
   opacity: 1;
@@ -114,7 +122,7 @@ a {
 * Mobile Navigation 
 */
 .mobile-nav-toggle {
-  color: #fff;
+  color: #000;
   font-size: 28px;
   cursor: pointer;
   display: none;
@@ -138,7 +146,7 @@ a {
   right: 0;
   left: 0;
   bottom: 0;
-  background: rgba(20, 21, 28, 0.9);
+  background: rgba(255, 255, 255, 0.753);
   transition: 0.3s;
   z-index: 999;
 }
@@ -160,20 +168,26 @@ a {
   overflow-y: auto;
   transition: 0.3s;
 }
-.navbar-mobile a, .navbar-mobile a:focus {
+.navbar-mobile a,
+.navbar-mobile a:focus {
   padding: 10px 20px;
   margin: 5px;
   font-size: 15px;
   color: #2a2c39;
 }
-.navbar-mobile a:hover, .navbar-mobile .active,.navbar-mobile a, .navbar-mobile li:hover > a, .navbar .active:focus {
-  color: white !important;
+.navbar-mobile a:hover,
+.navbar-mobile .active,
+.navbar-mobile a,
+.navbar-mobile li:hover > a,
+.navbar .active:focus {
+  color: #000 !important;
   border: none;
 }
 .navbar-mobile li:hover > a {
   border-right: 2px solid var(--bg-01);
 }
-.navbar-mobile .getstarted, .navbar-mobile .getstarted:focus {
+.navbar-mobile .getstarted,
+.navbar-mobile .getstarted:focus {
   margin: 15px;
 }
 .navbar-mobile .dropdown ul {
@@ -184,7 +198,7 @@ a {
   z-index: 99;
   opacity: 1;
   visibility: visible;
-  background: #fff;
+  background: #000;
   box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
 }
 .navbar-mobile .dropdown ul li {
@@ -226,21 +240,23 @@ a {
   font-size: 38px;
   font-weight: 800;
   line-height: 56px;
-  color: rgba(255, 255, 255, 0.8);
+  color: #000;
 }
 #main h2 {
-  color: rgba(255, 255, 255, 0.8);
+  color: #000;
   margin-bottom: 40px;
   font-size: 18px;
 }
-.main-img img{
+.main-img img {
   width: 400px;
   height: 400px;
 }
-#main .carousel-control-prev, #main .carousel-control-next {
+#main .carousel-control-prev,
+#main .carousel-control-next {
   width: 10%;
 }
-#main .carousel-control-next-icon, #main .carousel-control-prev-icon {
+#main .carousel-control-next-icon,
+#main .carousel-control-prev-icon {
   background: none;
   font-size: 48px;
   line-height: 1;
@@ -258,16 +274,17 @@ a {
   transition: 0.5s;
   line-height: 1;
   margin: 10px;
-  color: #fff;
+  color: #000;
   -webkit-animation-delay: 0.8s;
   animation-delay: 0.8s;
-  border: 2px solid white;
+  border: 2px solid #000;
 }
 @media (min-width: 1024px) {
   #main p {
     width: 60%;
   }
-  #main .carousel-control-prev, #main .carousel-control-next {
+  #main .carousel-control-prev,
+  #main .carousel-control-next {
     width: 5%;
   }
 }
@@ -366,7 +383,7 @@ a {
   padding: 10px 30px;
   border-radius: 50px;
   transition: 0.5s;
-  color: #fff;
+  color: #000;
   background: #1acc8d;
 }
 #main .btn-get-started:hover {
@@ -391,9 +408,6 @@ a {
   #main .main-img {
     text-align: center;
   }
-  #main .main-img img {
-    max-width: 50%;
-  }
   #main h1 {
     font-size: 28px;
     line-height: 32px;
@@ -408,6 +422,7 @@ a {
 @media (max-width: 575px) {
   #main .main-img img {
     width: 80%;
+    height: 250px;
   }
 }
 
@@ -511,8 +526,8 @@ a {
 # Footer
 --------------------------------------------------------------*/
 #footer {
-  background: linear-gradient(0deg, var(--bg-01) 0%, var(--bg-02) 36%);
-  color: #fff;
+  background: linear-gradient(0deg, var(--bg-01) 0%, var(--bg-02) 11%);
+  color: #000;
   font-size: 14px;
   text-align: center;
   padding: 30px 0;
@@ -520,7 +535,7 @@ a {
 #footer h3 {
   font-size: 36px;
   font-weight: 700;
-  color: #fff;
+  color: #000;
   position: relative;
   font-family: "Poppins", sans-serif;
   padding: 0;
@@ -539,7 +554,7 @@ a {
   font-size: 18px;
   display: inline-block;
   background: rgb(0 0 0 / 9%);
-  color: #fff;
+  color: #000;
   line-height: 1;
   padding: 8px 0;
   margin-right: 4px;
@@ -551,15 +566,47 @@ a {
   transition: 0.7s ease-in-out;
 }
 #footer .social-links a:hover {
-  background:var(--bg-03) ;
-  color: #fff;
+  background: var(--bg-01);
+  color: #000;
   text-decoration: none;
 }
 #footer .copyright {
   margin: 0 0 5px 0;
 }
-#footer .credits a{
+#footer .credits a {
   font-size: 13px;
-  color: #fff;
-
+  color: #000;
+}
+@media only screen and (max-width: 1200px) {
+  .container {
+    max-width: 90%;
+  }
+}
+@media only screen and (max-width: 1100px) {
+  .container {
+    max-width: 90%;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .container {
+    max-width: 95%;
+  }
+  .main-img img {
+    width: 300px;
+    height: 300px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .container {
+    max-width: 98%;
+  }
+  .main-img img {
+    width: 400px;
+    height: 400px;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .container {
+    max-width: 98%;
+  }
 }
