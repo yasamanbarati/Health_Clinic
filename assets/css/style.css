@@ -1,7 +1,9 @@
 :root {
-  --bg-01: #ffbaa8;
+  --bg-01: #ffa8b7;
   --bg-02: #7fc6da;
   --bg-03: #7fdac8;
+  --bg-dark: #000;
+  --bg-light: #fff;
 }
 body {
   font-family: "Open Sans", sans-serif;
@@ -15,12 +17,14 @@ a {
 /*--------------------------------------------------------------
 # Navigation Menu
 --------------------------------------------------------------*/
-.header-scrolled {
-  background-color: linear-gradient(0deg, var(--bg-01) 0%, var(--bg-02) 100%);
+#header.header-scrolled {
+  background: var(--bg-light);
+  margin-top: 0px !important;
+  padding-top: 1rem;
 }
-.logo h1 a {
-  color: #000;
-  font-weight: 900;
+.logo {
+  width: 100px;
+  height: 80px;
 }
 .navbar {
   padding: 0;
@@ -44,7 +48,7 @@ a {
   margin-left: 5px;
   font-size: 14px;
   font-weight: 500 !important;
-  color: #000 !important;
+  color: var(--bg-dark) !important;
   white-space: nowrap;
   transition: 0.3s;
   border-radius: 50px;
@@ -59,7 +63,7 @@ a {
 .navbar .active,
 .navbar .active:focus,
 .navbar li:hover > a {
-  border: 1px solid #ec7de7;
+  border: 1px solid var(--bg-01);
 }
 .navbar .dropdown ul {
   display: block;
@@ -71,7 +75,7 @@ a {
   z-index: 99;
   opacity: 0;
   visibility: hidden;
-  background: #000;
+  background: var(--bg-dark);
   box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
   transition: 0.3s;
   border-radius: 15px;
@@ -91,7 +95,7 @@ a {
 .navbar .dropdown ul a:hover,
 .navbar .dropdown ul .active:hover,
 .navbar .dropdown ul li:hover > a {
-  color: #000;
+  color: var(--bg-dark);
 }
 .navbar .dropdown:hover > ul {
   opacity: 1;
@@ -122,7 +126,7 @@ a {
 * Mobile Navigation 
 */
 .mobile-nav-toggle {
-  color: #000;
+  color: var(--bg-dark);
   font-size: 28px;
   cursor: pointer;
   display: none;
@@ -180,7 +184,7 @@ a {
 .navbar-mobile a,
 .navbar-mobile li:hover > a,
 .navbar .active:focus {
-  color: #000 !important;
+  color: var(--bg-dark) !important;
   border: none;
 }
 .navbar-mobile li:hover > a {
@@ -198,7 +202,7 @@ a {
   z-index: 99;
   opacity: 1;
   visibility: visible;
-  background: #000;
+  background: var(--bg-dark);
   box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
 }
 .navbar-mobile .dropdown ul li {
@@ -222,7 +226,7 @@ a {
   overflow: hidden;
   position: relative;
   background: url("../img/main-bg.jpg");
-  background: linear-gradient(0deg, var(--bg-01) 0%, var(--bg-02) 100%);
+  background: linear-gradient(0deg, var(--bg-01) 17%, var(--bg-02) 29%, var(--bg-03) 100%);
   padding: 50px 0 0 0;
 }
 #main .carousel-container {
@@ -240,10 +244,10 @@ a {
   font-size: 38px;
   font-weight: 800;
   line-height: 56px;
-  color: #000;
+  color: var(--bg-dark);
 }
 #main h2 {
-  color: #000;
+  color: var(--bg-dark);
   margin-bottom: 40px;
   font-size: 18px;
 }
@@ -274,10 +278,10 @@ a {
   transition: 0.5s;
   line-height: 1;
   margin: 10px;
-  color: #000;
+  color: var(--bg-dark);
   -webkit-animation-delay: 0.8s;
   animation-delay: 0.8s;
-  border: 2px solid #000;
+  border: 2px solid var(--bg-dark);
 }
 @media (min-width: 1024px) {
   #main p {
@@ -383,7 +387,7 @@ a {
   padding: 10px 30px;
   border-radius: 50px;
   transition: 0.5s;
-  color: #000;
+  color: var(--bg-dark);
   background: #1acc8d;
 }
 #main .btn-get-started:hover {
@@ -524,11 +528,11 @@ a {
 }
 
 /* test-online */
-.test-online-btn{
+.test-online-btn {
   background-color: var(--bg-01);
-  color: #000
+  color: var(--bg-dark);
 }
-.test-online-img{
+.test-online-img {
   width: 350px;
   height: 350px;
 }
@@ -537,16 +541,17 @@ a {
 # Footer
 --------------------------------------------------------------*/
 #footer {
-  background: linear-gradient(0deg, var(--bg-01) 0%, var(--bg-02) 11%);
-  color: #000;
+  background: linear-gradient(0deg, var(--bg-01) 3%, var(--bg-02) 14%, var(--bg-03) 73%);
+  color: var(--bg-dark);
   font-size: 14px;
   text-align: center;
   padding: 30px 0;
+  border-radius: 35% 35% 0% 0%;
 }
 #footer h3 {
   font-size: 36px;
   font-weight: 700;
-  color: #000;
+  color: var(--bg-dark);
   position: relative;
   font-family: "Poppins", sans-serif;
   padding: 0;
@@ -565,7 +570,7 @@ a {
   font-size: 18px;
   display: inline-block;
   background: rgb(0 0 0 / 9%);
-  color: #000;
+  color: var(--bg-dark);
   line-height: 1;
   padding: 8px 0;
   margin-right: 4px;
@@ -578,7 +583,7 @@ a {
 }
 #footer .social-links a:hover {
   background: var(--bg-01);
-  color: #000;
+  color: var(--bg-dark);
   text-decoration: none;
 }
 #footer .copyright {
@@ -586,7 +591,7 @@ a {
 }
 #footer .credits a {
   font-size: 13px;
-  color: #000;
+  color: var(--bg-dark);
 }
 @media only screen and (max-width: 1200px) {
   .container {
