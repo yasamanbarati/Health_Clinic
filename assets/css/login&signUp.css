@@ -1,13 +1,22 @@
-body{
+:root {
+    --bg-01: #ffa8b7;
+    --bg-02: #7fc6da;
+    --bg-03: #7fdac8;
+    --bg-light: #fff;
+    --bg-dark: #000;
+}
+body {
     direction: rtl;
+    background: transparent;
 }
-.image-container{
-    background: url('bg.png') center no-repeat;
-    background-size: cover;
-    height: 100vh;
+.logo {
+    height: 60px;
+    width: 190px;
 }
-
-.form-block{
+.title{
+    color: var(--bg-light);
+}
+.form-block {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -15,14 +24,10 @@ body{
     min-height: 100vh;
 }
 
-.form-box{
-    border: 2px solid #e55940;
+.form-box {
+    border: 2px solid transparent;
     border-top-left-radius: 100px;
     border-bottom-right-radius: 100px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
 }
 
 .form-box h4 {
@@ -36,14 +41,14 @@ body{
 .form-box .form-input input {
     width: 100%;
     height: 40px;
-    margin-bottom: 20px;    
+    margin-bottom: 20px;
     box-sizing: border-box;
     box-shadow: none;
-    border: 1px solid #ffe0da;
+    border: 1px solid var(--bg-02);
     border-radius: 40px;
     outline: none;
-    color: black;
-    background: transparent;   
+    color: var(--bg-light);
+    background: transparent;
     padding-left: 40px;
 }
 
@@ -51,26 +56,28 @@ body{
     position: absolute;
     top: 8px;
     padding-left: 15px;
-    color: #ff6347;
+    color: var(--bg-02);
 }
 
 .form-box .form-input input::placeholder {
-    color: black;
+    color: var(--bg-light);
     padding-left: 0px;
 }
 
 .form-box .form-input input:focus,
 .form-box .form-input input:valid {
-    border: 2px solid #ff6347;
+    border: 2px solid var(--bg-02);
 }
 
 .form-box .form-input input:focus::placeholder {
-    color: #454b69;
+    color: var(--bg-light);
 }
-
+.custom-control-label {
+    color: var(--bg-light);
+}
 .custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
-  background-color: #e55940 !important;
-  border:0px;
+    background-color: var(--bg-01) !important;
+    border: 0px;
 }
 
 .form-box button[type="submit"] {
@@ -78,23 +85,24 @@ body{
     border: none;
     cursor: pointer;
     border-radius: 20px;
-    background: linear-gradient(45deg, #e55940, #fb8a76);
+    background: linear-gradient(45deg, var(--bg-02), var(--bg-03));
     color: #fff;
     font-weight: bold;
     transition: 0.5s;
 }
 
-.form-box button[type="submit"]:hover {
-    background: linear-gradient(45deg, #fb8a76, #e55940);
-}
 
-.forget-link , .login-link , .register-link {
-    color: #fb8a76;
+.forget-link,
+.login-link,
+.register-link {
+    color: var(--bg-03);
     font-weight: bold;
 }
 
-.forget-link:hover , .login-link:hover , .register-link:hover {
-    color: #e55940;
+.forget-link:hover,
+.login-link:hover,
+.register-link:hover {
+    color: var(--bg-01);
     text-decoration: none;
 }
 
@@ -117,15 +125,46 @@ body{
 
 .form-box .btn-facebook:hover {
     color: white;
-    background: hsla(221, 40%, 40%, 1);
+    background-color: hsla(221, 40%, 40%, 1) !important;
+    background-image: none !important;
 }
 
 .form-box .btn-google:hover {
     color: white;
-    background: hsla(4, 59%, 47%, 1);
+    background-color: hsla(4, 59%, 47%, 1) !important;
+    background-image: none !important;
 }
 
 .form-box .btn-twitter:hover {
     color: white;
-    background: hsla(195, 78%, 54%, 1);
+    background-color: hsla(195, 78%, 54%, 1) !important;
+    background-image: none !important;
+}
+.background-form {
+    position: absolute;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+.background-form img {
+    width: 100%;
+    height: 100%;
+    filter: blur(2px);
+    border-top-left-radius: 100px;
+    border-bottom-right-radius: 100px;
+}
+.info-box::after {
+    content: " ";
+    display: inline-block;
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-image: radial-gradient(ellipse at left bottom, #0000008f 0%,#000000d9 59%,#000000b0 100%);
+    border-top-left-radius: 100px;
+    border-bottom-right-radius: 100px;
 }
