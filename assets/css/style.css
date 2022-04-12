@@ -522,6 +522,17 @@ a {
     transform: translate(85px, 0%);
   }
 }
+
+/* test-online */
+.test-online-btn{
+  background-color: var(--bg-01);
+  color: #000
+}
+.test-online-img{
+  width: 350px;
+  height: 350px;
+}
+
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/

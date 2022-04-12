@@ -1,3 +1,6 @@
+body{
+    direction: rtl;
+}
 .image-container{
     background: url('bg.png') center no-repeat;
     background-size: cover;
