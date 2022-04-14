@@ -528,13 +528,44 @@ a {
 }
 
 /* test-online */
+.test-box{
+  background-image: url(../img/white-wallpaper.jpg);
+}
+.online-test-box{
+  border-bottom: 1px solid var(--bg-03);
+}
+.online-test-box h2::before{
+  position: absolute;
+  content: "";
+  width: 125px;
+  height: 1px;
+  top: 100%;
+  background-color: var(--bg-01);
+  z-index: 50;
+}
 .test-online-btn {
   background-color: var(--bg-01);
   color: var(--bg-dark);
 }
-.test-online-img {
-  width: 350px;
-  height: 350px;
+.test-online-btn:hover{
+  color: #000;
+  transform: scale(1.03);
+  background-color: rgb(255 168 183 / 0.7);
+  border: 1px solid var(--bg-01);
+}
+.test-box .col-5{
+  background-color: #fff;
+}
+.test-image{
+  top: -125px;
+  right: 15%;
+  border: 2px solid var(--bg-01);
+  border-radius: 20px;
+}
+.test-online-img{
+  width: 330px;
+  height: 330px;
+  border-radius: 20px;
 }
 
 /*--------------------------------------------------------------
