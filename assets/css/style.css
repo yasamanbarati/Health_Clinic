@@ -553,9 +553,19 @@ a {
   background-color: rgb(255 168 183 / 0.7);
   border: 1px solid var(--bg-01);
 }
-.test-online-img {
-  width: 350px;
-  height: 350px;
+.test-box .col-5{
+  background-color: #fff;
+}
+.test-image{
+  top: -125px;
+  right: 15%;
+  border: 2px solid var(--bg-01);
+  border-radius: 20px;
+}
+.test-online-img{
+  width: 330px;
+  height: 330px;
+  border-radius: 20px;
 }
 
 /*--------------------------------------------------------------
