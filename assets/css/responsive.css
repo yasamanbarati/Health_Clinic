@@ -1,0 +1,102 @@
+@media only screen and (max-width:1200px){
+    .logo{
+        height: 57px;
+        width: 180px;
+    }
+    .login-page .text-lg{
+        font-size: 1.05rem!important;
+    }   
+    .login-page .text-md{
+        font-size: 0.94rem!important;
+    }
+}
+@media only screen and (max-width:1100px){
+    .logo{
+        height: 55px;
+        width: 170px;
+    }
+    .login-page .text-lg{
+        font-size: 0.98rem!important;
+    }   
+    .login-page .text-md{
+        font-size: 0.88rem!important;
+    }   
+    .login-page .text-2xl{
+        font-size: 1.46rem;
+    }
+}
+@media only screen and (max-width:992px){
+    .logo{
+        height: 51px;
+        width: 160px;
+    }
+    .login-page .text-lg{
+        font-size: 0.91rem!important;
+    }   
+    .login-page .text-md{
+        font-size: 0.8rem!important;
+    }
+    .login-page .text-2xl{
+        font-size: 1.4rem;
+    }
+}
+@media only screen and (max-width:768px){
+    .logo{
+        height: 48px;
+        width: 153px;
+    }    
+    .login-page .text-lg{
+        font-size: 0.88rem!important;
+    }
+    .login-page .text-md{
+        font-size: 0.76rem!important;
+    }
+    .login-page .text-2xl{
+        font-size: 1.35rem;
+    }
+}
+@media only screen and (max-width:576px){
+    .logo{
+        height: 45px;
+        width: 148px;
+    }    
+    .login-page .text-lg{
+        font-size: 0.91rem!important;
+    }
+    .login-page .text-md{
+        font-size: 0.8rem!important;
+    }
+    .login-page .text-2xl{
+        font-size: 1.3rem;
+    }
+}
+@media only screen and (max-width:410px){
+    .logo{
+        height: 43px;
+        width: 130px;
+    }  
+    .login-page .text-lg{
+        font-size: 0.84rem!important;
+    }
+    .login-page .text-md{
+        font-size: 0.71rem!important;
+    }
+    .login-page .text-2xl {
+        font-size: 1.1rem;
+    }
+}
+@media only screen and (max-width:300px){
+    .logo {
+        height: 40px;
+        width: 115px;
+    }
+    .login-page .text-lg{
+        font-size: 0.8rem!important;
+    }
+    .login-page .text-md{
+        font-size: 0.68rem!important;
+    }
+    .login-page .text-2xl{
+        font-size: 1.05rem;
+    }
+}
