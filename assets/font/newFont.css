@@ -1,0 +1,63 @@
+@font-face{
+    font-family: Shabnam;
+    font-style: normal;
+    font-weight: 900;
+    src: url('font/shabnam-font-v2.4.0/Shabnam-Bold.eot');
+    src: url('font/shabnam-font-v2.4.0/Shabnam-Bold.eot') format('mbedded-opentype'),
+         url('font/shabnam-font-v2.4.0/Shabnam-Bold.woff') format('woff'),
+         url('font/shabnam-font-v2.4.0/Shabnam-Bold.ttf') format('truetype');
+}
+@font-face{
+    font-family: Shabnam;
+    font-style: normal;
+    font-weight: 800;
+    src: url('font/shabnam-font-v2.4.0/Farsi-Digits/Shabnam-Bold-FD.eot');
+    src: url('font/shabnam-font-v2.4.0/Farsi-Digits/Shabnam-Bold-FD.eot') format('mbedded-opentype'),
+         url('font/shabnam-font-v2.4.0/Farsi-Digits/Shabnam-Bold-FD.woff') format('woff'),
+         url('font/shabnam-font-v2.4.0/Farsi-Digits/Shabnam-Bold-FD.ttf') format('truetype');
+}@font-face{
+    font-family: Shabnam;
+    font-style: normal;
+    font-weight: 700;
+    src: url('font/shabnam-font-v2.4.0/Farsi-Digits/Shabnam-Bold-FD.eot');
+    src: url('font/shabnam-font-v2.4.0/Farsi-Digits/Shabnam-Bold-FD.eot') format('mbedded-opentype'),
+         url('font/shabnam-font-v2.4.0/Farsi-Digits/Shabnam-Bold-FD.woff') format('woff'),
+         url('font/shabnam-font-v2.4.0/Farsi-Digits/Shabnam-Bold-FD.ttf') format('truetype');
+}
+
+@font-face{
+    font-family: Shabnam;
+    font-style: normal;
+    font-weight: 500;
+    src: url('font/shabnam-font-v2.4.0/Farsi-Digits/Shabnam-FD.eot');
+    src: url('font/shabnam-font-v2.4.0/Farsi-Digits/Shabnam-FD.eot') format('mbedded-opentype'),
+         url('font/shabnam-font-v2.4.0/Farsi-Digits/Shabnam-FD.woff') format('woff'),
+         url('font/shabnam-font-v2.4.0/Farsi-Digits/Shabnam-FD.ttf') format('truetype');
+}
+@font-face{
+    font-family: Shabnam;
+    font-style: normal;
+    font-weight: 400;
+    src: url('font/shabnam-font-v2.4.0/Shabnam.eot');
+    src: url('font/shabnam-font-v2.4.0/Shabnam.eot') format('mbedded-opentype'),
+         url('font/shabnam-font-v2.4.0/Shabnam.woff') format('woff'),
+         url('font/shabnam-font-v2.4.0/Shabnam.ttf') format('truetype');
+}
+@font-face{
+    font-family: Shabnam;
+    font-style: normal;
+    font-weight: 300;
+    src: url('font/shabnam-font-v2.4.0/Shabnam-Light.eot');
+    src: url('font/shabnam-font-v2.4.0/Shabnam-Light.eot') format('mbedded-opentype'),
+         url('font/shabnam-font-v2.4.0/Shabnam-Light.woff') format('woff'),
+         url('font/shabnam-font-v2.4.0/Shabnam-Light.ttf') format('truetype');
+}
+@font-face{
+    font-family: Shabnam;
+    font-style: normal;
+    font-weight: 100;
+    src: url('font/shabnam-font-v2.4.0/Farsi-Digits/Shabnam-Light-FD.eot');
+    src: url('font/shabnam-font-v2.4.0/Farsi-Digits/Shabnam-Light-FD.eot') format('mbedded-opentype'),
+         url('font/shabnam-font-v2.4.0/Farsi-Digits/Shabnam-Light-FD.woff') format('woff'),
+         url('font/shabnam-font-v2.4.0/Farsi-Digits/Shabnam-Light-FD.ttf') format('truetype');
+}
