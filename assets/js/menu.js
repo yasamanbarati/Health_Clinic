@@ -1,0 +1,10 @@
+$(document).ready(()=>{
+    $(".nav-menu").click(()=>{
+        $(".navbar_side_menu").slideToggle(1000);
+        $("body").addClass("modal-open")
+    });
+    $(".menu_control_btn").click(()=>{
+        $(".navbar_side_menu").slideUp(600);
+        $("body").removeClass("modal-open")
+    })
+})
