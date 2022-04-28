@@ -182,6 +182,10 @@ a {
 .footer-info p{
   font-weight: 500;
 }
+.footer-media a img{
+  width: 40px;
+  height: 40px;
+}
 @keyframes up-down {
   0% {
     transform: translateY(10px);
