@@ -4,53 +4,56 @@
   --bg-03: #c1e3c2;
   --bg-04: #20e3b2;
   --bg-05: #29ffc6;
-  --bg-dark: #000;
+  --bg-dark: #00434C;
   --bg-light: #fff;
 }
 body {
-  font-family: Shabnam;
+  font-family: Vazir;
   direction: rtl;
+}
+h1,h2,h3,h4,h5,h6,p,a{
+  color: var(--bg-dark);
 }
 a {
   text-decoration: none;
 }
-.head{
+.head {
   height: 100vh;
 }
-.nav-item::after{
+.nav-item::after {
   content: "";
   position: absolute;
   width: 0%;
   height: 2px;
   background: white;
-  box-shadow: 0 0px 0px 0 rgba(0,0,0,.01),0 3px 4px 0px #00bcd466!important;
+  box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.01), 0 3px 4px 0px #00bcd466 !important;
   top: calc(0% + 33px);
   transition: 0.6s ease-in-out;
 }
-.nav-item:hover:after{
+.nav-item:hover:after {
   width: 100%;
 }
-.nav-link ,
-.footer-link_title h2{
-  font-weight: 700;
-}
-.singUp-box{
-  box-shadow: 0 0px 0px 0 rgba(0,0,0,.01),0 5px 7px -3px #00bcd466!important;
-}
-.navbar_side_menu{
-  display : none;
-  left: 10px;
-}
-.modal-open{
-  display: block;
-}
-.nav-menu span{
-  font-size: 2.5rem !important;
-}
-.navbar-responsive-item a{
+.nav-link,
+.footer-link_title h2 {
   font-weight: 600;
 }
-.menu_control_btn i{
+.singUp-box {
+  box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.01), 0 5px 7px -3px #00bcd466 !important;
+}
+.navbar_side_menu {
+  display: none;
+  left: 10px;
+}
+.modal-open {
+  display: block;
+}
+.nav-menu span {
+  font-size: 2.5rem !important;
+}
+.navbar-responsive-item a {
+  font-weight: 600;
+}
+.menu_control_btn i {
   font-size: 2rem !important;
 }
 .main {
@@ -59,10 +62,10 @@ a {
   height: 90vh;
 }
 .main-slider h2 {
-  font-weight: 900;
+  font-weight: 800;
 }
 .main-slider p {
-  font-weight: 500;
+  font-weight: 400;
 }
 .main .animated {
   animation: up-down 2s ease-in-out infinite alternate-reverse both;
@@ -102,7 +105,7 @@ a {
   position: relative;
   background: linear-gradient(0deg, var(--bg-01) 0%, var(--bg-02) 100%);
   bottom: 30%;
-    transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 
 .wave1 use {
@@ -129,62 +132,105 @@ a {
 /* test-online */
 .test-box {
   background-image: url(../img/white-wallpaper.jpg);
+  height: 400px;
 }
-.test-box-info {
-  border-bottom: 1px solid var(--bg-03);
+.test-box-title {
+  border-bottom: 3.5px solid var(--bg-03);
 }
-.test-box-info h2::before {
+.test-box-title h2,
+.our-team-title h2 {
+  color: var(--bg-dark);
+  font-weight: 800;
+}
+.test-box-title h2::before {
   position: absolute;
   content: "";
-  width: 125px;
-  height: 1px;
-  top: 100%;
+  width: 130px;
+  height: 3px;
+  top: 47px;
   background-color: var(--bg-01);
   z-index: 50;
 }
+.test-box-info p{
+  font-weight: 400;
+}
 .test-box-info-btn {
+  font-weight: 600;
   background-color: var(--bg-01);
-  color: var(--bg-dark);
+  color: var(--bg-light);
 }
 .test-box-info-btn:hover {
-  color: #000;
-  transform: scale(1.03);
-  background-color: rgb(255 168 183 / 0.7);
-  border: 1px solid var(--bg-01);
+  color: var(--bg-dark);
+  transform: scale(1.01);
+  background-color: transparent;
+  border: 0.125rem solid var(--bg-01);
+  font-weight: 600;
 }
 .test-box-imgBox::after {
   content: "";
   position: absolute;
-  width: 300px;
-  height: 300px;
+  width: 350px;
+  height:350px;
   border-radius: 10%;
-  top: auto;
-  bottom: -126px;
-  left: 20px;
+  top: 20px;
+  left: 0px;
   background-color: #fff;
   box-shadow: 0px 0px 5px 0px #e8e8e8;
 }
 .test-box-img {
-  width: 300px;
-  height: 300px;
+  width: 320px;
+  height: 320px;
   z-index: 10;
   left: 80px;
-  top: -137px;
+  top: 60px;
 }
-.footer_cover{
+.team-content h2{
+  font-weight: 800;
+}
+.team-content h3{
+  font-weight: 600;
+}
+.team .team-img {
+  position: relative;
+  font-size: 0;
+  text-align: center;
+  border-radius: 100%;
+  margin-bottom: 30px;
+  overflow: hidden;
+}
+.team-img img {
+  width: 260px !important;
+  height: 260px !important;
+  border-radius: 100%;
+  border: 10px solid var(--bs-gray-100);;
+  transition: all .7s ease-in-out;
+}
+.team:hover .team-img img {
+  border: 0px solid var(--bs-gray-100);;
+}
+.owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
+  background: var(--bg-01);
+}
+.footer_cover {
   height: 200px;
   transform: rotate(180deg);
 }
-.footer-logo img{
+.footer-logo img {
   width: 150px;
   height: 50px;
 }
-.footer-info p{
-  font-weight: 500;
+.footer-info p {
+  font-weight: 600;
 }
-.footer-media a img{
+.footer-media a img {
   width: 40px;
   height: 40px;
+}
+.footer-link_title h2{
+  font-weight: 800;
+}
+.footer-link ul li a{
+  font-weight: 600;
 }
 @keyframes up-down {
   0% {
