@@ -79,7 +79,7 @@ a{
     height: 320px;
 }
 .member-name{
-    border-bottom: 1px solid var(--bg-04);
+    border-bottom: 1px solid var(--bg-03);
     margin-bottom: 2.25rem;
 }
 svg{
@@ -91,7 +91,7 @@ svg{
     height: 25px;
 }
 .social-media{
-    background-color: var(--bg-04);
+    background-color: var(--bg-03);
     width: 40px;
     height: 40px;
 }
@@ -100,4 +100,28 @@ h6{
 }
 .social-media-icon{
     margin-top: 2.5rem;
+}
+.member-name h2::before{
+    position: absolute;
+    content: "";
+    background-color: var(--bg-01);
+    height: 1px;
+    top: 100%;
+}
+.member-name  .member-1::before,
+.member-name .member-6::before{
+    width: 123px;
+}
+.member-name .member-2::before{
+    width:188px;
+}
+.member-name .member-3::before{
+    width: 140px;
+}
+.member-name .member-4::before,
+.member-name .member-5::before{
+    width: 160px;
+}
+.member-name .member-7::before{
+    width: 152px;
 }
