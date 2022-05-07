@@ -269,6 +269,9 @@ a {
 .member-info-link-text p{
 font-weight: 600;
 }
+.profile-image{
+  height: 380px;
+}
 @keyframes up-down {
   0% {
     transform: translateY(10px);
