@@ -4,21 +4,25 @@
   --bg-03: #c1e3c2;
   --bg-04: #20e3b2;
   --bg-05: #29ffc6;
-  --bg-dark: #00434C;
+  --bg-dark: #00434c;
   --bg-light: #fff;
 }
 body {
   font-family: Vazir;
   direction: rtl;
 }
-h1,h2,h3,h4,h5,h6,p,a{
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a {
   color: var(--bg-dark);
 }
 a {
   text-decoration: none;
-}
-.head {
-  height: 100vh;
 }
 .nav-item::after {
   content: "";
@@ -97,48 +101,17 @@ a {
 .main-slider .owl-nav button.owl-prev span {
   font-size: 30px;
 }
-.main-waves {
-  display: block;
-  width: 100%;
-  height: 150px;
-  z-index: -1;
-  position: relative;
-  background: linear-gradient(0deg, var(--bg-01) 0%, var(--bg-02) 100%);
-  bottom: 30%;
-  transform: rotate(180deg);
-}
-
-.wave1 use {
-  -webkit-animation: move-forever1 10s linear infinite;
-  animation: move-forever1 10s linear infinite;
-  -webkit-animation-delay: -2s;
-  animation-delay: -2s;
-}
-
-.wave2 use {
-  -webkit-animation: move-forever2 8s linear infinite;
-  animation: move-forever2 8s linear infinite;
-  -webkit-animation-delay: -2s;
-  animation-delay: -2s;
-}
-
-.wave3 use {
-  -webkit-animation: move-forever3 6s linear infinite;
-  animation: move-forever3 6s linear infinite;
-  -webkit-animation-delay: -2s;
-  animation-delay: -2s;
-}
-.process-title h2{
+.process-title h2 {
   font-weight: 800;
 }
-.stap-img{
+.stap-img {
   width: 150px;
   height: 150px;
 }
-.stap-text h3{
+.stap-text h3 {
   font-weight: 600;
 }
-.stap-text p{
+.stap-text p {
   font-weight: 400;
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -153,9 +126,9 @@ a {
   height: 64px;
   bottom: 100%;
   right: 75%;
-  background: url(../img/process-line.png) no-repeat scroll 0 0/cover;
+  background: url(../img/process-line.png) no-repeat scroll 0 0 / cover;
 }
-.process-index .col-md-3:last-child::after{
+.process-index .col-md-3:last-child::after {
   display: none;
 }
 /* test-online */
@@ -180,7 +153,7 @@ a {
   background-color: var(--bg-01);
   z-index: 50;
 }
-.test-box-info p{
+.test-box-info p {
   font-weight: 400;
 }
 .test-box-info-btn {
@@ -199,7 +172,7 @@ a {
   content: "";
   position: absolute;
   width: 350px;
-  height:350px;
+  height: 350px;
   border-radius: 10%;
   top: 20px;
   left: 0px;
@@ -213,10 +186,10 @@ a {
   left: 80px;
   top: 60px;
 }
-.team-content h2{
+.team-content h2 {
   font-weight: 800;
 }
-.team-content h3{
+.team-content h3 {
   font-weight: 600;
 }
 .team .team-img {
@@ -231,13 +204,14 @@ a {
   width: 260px !important;
   height: 260px !important;
   border-radius: 100%;
-  border: 10px solid var(--bs-gray-100);;
-  transition: all .7s ease-in-out;
+  border: 10px solid var(--bs-gray-100);
+  transition: all 0.7s ease-in-out;
 }
 .team:hover .team-img img {
-  border: 0px solid var(--bs-gray-100);;
+  border: 0px solid var(--bs-gray-100);
 }
-.owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
+.owl-theme .owl-dots .owl-dot.active span,
+.owl-theme .owl-dots .owl-dot:hover span {
   background: var(--bg-01);
 }
 .footer_cover {
@@ -255,11 +229,45 @@ a {
   width: 40px;
   height: 40px;
 }
-.footer-link_title h2{
+.footer-link_title h2 {
   font-weight: 800;
 }
-.footer-link ul li a{
+.footer-link ul li a {
   font-weight: 600;
+}
+.member::after{
+  position: absolute;
+  content: "";
+  width: 65%;
+  height: 2px;
+  background: var(--bg-01);
+  left: 10px;
+  top: 99px;
+  z-index: 0;
+}
+.member-info{
+  flex-direction: column;
+}
+.member-name {
+  border-bottom: 4px solid var(--bg-03);
+}
+.member-name h2,
+.member-name h4{
+  font-weight: 800;
+}
+.member-name h4{
+  color: var(--bg-01);
+}
+.member-icon{
+  color: var(--bg-03);
+}
+.member-info-link {
+  flex-direction: column;
+  height: 65%;
+}
+.member-info-link-text h3,
+.member-info-link-text p{
+font-weight: 600;
 }
 @keyframes up-down {
   0% {
@@ -269,7 +277,6 @@ a {
     transform: translateY(-10px);
   }
 }
-
 @-webkit-keyframes move-forever1 {
   0% {
     transform: translate(85px, 0%);
@@ -278,7 +285,6 @@ a {
     transform: translate(-90px, 0%);
   }
 }
-
 @keyframes move-forever1 {
   0% {
     transform: translate(85px, 0%);
