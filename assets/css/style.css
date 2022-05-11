@@ -214,6 +214,20 @@ a {
 .owl-theme .owl-dots .owl-dot:hover span {
   background: var(--bg-01);
 }
+/* about us */  
+.about-team-box p{
+  font-weight: 600;
+}
+.about-team-box h2::before{
+  width: 65px;
+}
+.about-info-list li{
+  list-style: disc;
+}
+.our-services img{
+  width: 160px;
+  height: 160px;
+}
 .footer_cover {
   height: 200px;
   transform: rotate(180deg);
