@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/material-dashboard.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/font/newFont.css">
+    <link rel="stylesheet" href="assets/css/test_online.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <section class="row justify-content-center align-items-center border-radius-2xl">
+            <section class="col-lg-9 bg-white p-5">
+                <form action="" id="wizard" role="application" class="wizard clearfix">
+                    <div class="steps clearfix">
+                        <ul role="tablist">
+                            <li role="tab" aria-disabled="false" class="first current" aria-selected="true"><a
+                                    id="wizard-t-0" href="Test_step1.html" aria-controls="stepOne"><span
+                                        class="current-info audible">current
+                                        step: </span><span class="number">1.</span> <img
+                                        src="assets/img/step-1-active.png" alt="">
+                                    <span class="step-order text-sm d-block text-center text-black-50 mt-3">مرحله
+                                        اول</span></a><img src="assets/img/step-arrow.png" alt="" class="step-arrow">
+                            </li>
+                            <li role="tab" aria-disabled="false"><a id="wizard-t-1" href="Test_step2.html"
+                                    aria-controls="wizard-p-1"><span class="number">2.</span> <img
+                                        src="assets/img/step-2.png" alt=""><span
+                                        class="step-order text-sm d-block text-center text-black-50 mt-3">مرحله
+                                        دوم</span></a><img src="assets/img/step-arrow.png" alt="" class="step-arrow">
+                            </li>
+                            <li role="tab" aria-disabled="false" class="last"><a id="wizard-t-3" href="Test_step3.html"
+                                    aria-controls="wizard-p-3"><span class="number">3.</span> <img
+                                        src="assets/img/step-4.png" alt=""><span
+                                        class="step-order text-sm d-block text-center text-black-50 mt-3">مرحله
+                                        سوم</span></a></li>
+                        </ul>
+                    </div>
+                    <div class="content clearfix">
+                        <!-- SECTION 1 -->
+                        <section id="stepOne" role="tabpanel" class="body current" aria-hidden="false">
+                            <h3 class="text-4xl text-center text-dark mb-4">جزئیات اساسی</h3>
+                            <div class="form-row d-flex mb-5">
+                                <div class="form-holder w-50 me-4">
+                                    <i class="zmdi zmdi-account"></i>
+                                    <input type="text" class="form-control text-md" placeholder="نام">
+                                </div>
+                                <div class="form-holder w-50 me-0">
+                                    <i class="zmdi zmdi-account"></i>
+                                    <input type="text" class="form-control text-md" placeholder="نام خانوادگی">
+                                </div>
+                            </div>
+                            <div class="form-row d-flex mb-5">
+                                <div class="form-holder w-50 me-4">
+                                    <i class="zmdi zmdi-email"></i>
+                                    <input type="text" class="form-control text-md" placeholder="ایمیل">
+                                </div>
+                                <div class="form-holder w-50 me-0">
+                                    <i class="zmdi zmdi-smartphone-android"></i>
+                                    <input type="text" class="form-control text-md" placeholder="شماره تماس">
+                                </div>
+                            </div>
+                            <div class="form-row d-flex mb-5">
+                                <div class="form-holder w-50 me-4">
+                                    <i class="zmdi zmdi-map"></i>
+                                    <input type="text" class="form-control text-md" placeholder="کشور">
+                                </div>
+                                <div class="form-group">
+                                    <div class="form-holder w-50 me-4">
+                                        <i class="zmdi zmdi-pin"></i>
+                                        <input type="text" class="form-control text-md" placeholder="استان">
+                                    </div>
+                                    <div class="form-holder w-50 me-0">
+                                        <i class="zmdi zmdi-pin-drop"></i>
+                                        <input type="text" class="form-control text-md" placeholder="شهر">
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                    </div>
+                    <div class="actions clearfix">
+                        <ul role="menu" aria-label="Pagination">
+                            <li class="disabled" aria-disabled="true"><a href="Home.html" role="menuitem">بازگشت</a>
+                            </li>
+                            <li aria-hidden="false" aria-disabled="false"><a href="Test_step1.html"
+                                    role="menuitem">ادامه</a></li>
+                        </ul>
+                    </div>
+                </form>
+            </section>
+        </section>
+    </div>
+</body>
+
+</html>
