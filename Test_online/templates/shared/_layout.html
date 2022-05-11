@@ -1,0 +1,45 @@
+{% load render_partial %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    {% include 'shared/header_refrense.html' %}
+</head>
+
+<body>
+{% render_partial  'Home_module.views.site_header_component'%}
+{% block content %}  {% endblock %}
+{% comment %}<section class="py-5 test-box d-none">
+    <section class="container">
+        <section class="row align-items-center justify-content-between">
+            <section class="col-4">
+                <section class="test-box-info">
+                    <h2 class="mb-0 position-relative">تست آنلاین</h2>
+                </section>
+                <section class="mt-4">
+                    <p class="mb-0 text-darker text-lg">
+                        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است
+                        چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است
+                    </p>
+                </section>
+                <section class="my-4">
+                    <a href="" class="btn btn-link text-lg mb-0 test-box-info-btn">شروع تست</a>
+                </section>
+            </section>
+            <section class="test-box-imgBox col-5 text-center position-relative">
+                <section class="position-absolute test-box-img shadow-dark">
+                    <img src="/static/img/medical-tests-for-term-insurance-policy-removebg-preview.png"
+                         alt="test-online" class="w-100 h-100">
+                </section>
+            </section>
+        </section>
+    </section>
+</section>{% endcomment %}
+{% render_partial  'Home_module.views.site_footer_component'%}
+</body>
+{% include 'shared/footer_refrense.html' %}
+</html>

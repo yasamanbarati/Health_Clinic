@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{{user.email}}
+{% if user.avatar %}
+    <img src="{{ user.avatar.url }}" style="width: 20%; height: 20%" alt="">
+{% endif %}
+{% comment %}<form action="{% url 'CompleteRegister' %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {% for foo in form %}
+            {{ foo.label}}
+            {{ foo}}
+    {% endfor %}
+        {{ user.email }}
+        <div>
+            {{ form.first_name.label_tag }}
+            {{ form.first_name }}
+            {{ form.first_name.errors }}
+        </div>
+        <div>
+            {{ form.last_name.label_tag }}
+            {{ form.last_name }}
+            {{ form.last_name.errors }}
+        </div>    <div>
+        {{ form.users_name.label_tag }}
+        {{ form.users_name }}
+        {#    {{ form.users_name.errors }}#}
+    </div>    <div>
+        {{ form.weight.label_tag }}
+        {{ form.weight }}
+        {{ form.weight.errors }}
+    </div>
+
+        <div>
+            {{ form.height.label_tag }}
+            {{ form.height }}
+            {{ form.height.errors }}
+        </div>
+        <div>
+            {{ form.about_text.label_tag }}
+            {{ form.about_text }}
+            {#    {{ form.about_text.errors }}#}
+        </div>
+        <div>
+            {{ form.avatar.label_tag }}
+            {{ form.avatar }}
+            {#    {{ form.about_text.errors }}#}
+        </div>
+
+    {#        <input type="submit" name="submit" class="btn btn-primary pull-right" value="ارسـال">#}
+    <button class="btn-registrar"> ثبت آدرس</button>
+</form>{% endcomment %}
+<form method="post" action="{% url 'CompleteRegister' %}" class="form-checkout"
+      enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="form-checkout-row">
+        {#                                                {{ form.first_name.label_tag }}#}
+        {#                                                {{ form.first_name }}#}
+        {#                                                {{ form.first_name.errors }}#}
+        {#                                                {{ form.city.errors }}#}
+        {% for foo in form %}
+            {{ foo.label}}
+            {{ foo}}
+        {% endfor %}
+        <div class="AR-CR">
+            <button class="btn-registrar"> ثبت آدرس</button>
+{#            <a href="{% url 'panel_dashboard' %}" class="cancel-edit-address" data-dismiss="modal" aria-label="Close">بازگشت</a>#}
+        </div>
+    </div>
+</form>
+</body>
+</html>

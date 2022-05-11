@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="{% url 'calculate_bmi' %}" method="post">
+    {% csrf_token %}
+    <h3>محاسبه BMI</h3>
+  <div>
+    {{ form.weight.label_tag }}
+    {{ form.weight }}
+    {{ form.weight.errors }}
+</div>
+
+    <div>
+        {{ form.height.label_tag }}
+        {{ form.height }}
+        {{ form.height.errors }}
+    </div>
+    <div>
+        {{ form.age.label_tag }}
+        {{ form.age }}
+        {{ form.age.errors }}
+    </div>
+    <div>
+        {{ form.gender.label_tag }}
+        {{ form.gender }}
+        {{ form.gender.errors }}
+    </div>
+    <br>
+        <div>
+
+
+    </div>
+    <input type="submit" name="submit" class="btn btn-primary pull-right" value="ارسـال">
+</form>
+
+</body>
+</html>
