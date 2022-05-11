@@ -6,37 +6,39 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link href="assets/css/bootstrap.min.css" rel="stylesheet">
-	<link href="assets/css/bootstrap-icons.css" rel="stylesheet">
 	<link href="assets/css/boxicons.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="assets/css/material-dashboard.min.css">
 	<link rel="stylesheet" href="assets/css/owl.carousel.min.css">
 	<link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
 	<link rel="stylesheet" href="assets/css/blk-design-system.min.css">
+	<link rel="stylesheet" href="assets/font/newFont.css">
 	<link href="assets/css/login&signUp.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	<link rel="stylesheet" href="assets/css/responsive.css">
 </head>
 
 <body class="login-page">
 	<section class="container-fluid">
-		<section class="row justify-content-center">
-			<section class="col-lg-4 col-md-7 col-sm-8 col-11 form-box d-flex flex-column justify-content-center mt-5 position-relative info-box">
-				<section class="background-form">
-					<img src="assets/img/medical-tests-for-term-insurance-policy-removebg-preview.png" alt="background">
-				</section>
+		<section class="register_form row justify-content-center align-items-center">
+			<section
+				class="col-lg-4 col-md-7 col-sm-8 col-11 form-box d-flex flex-column justify-content-center position-relative info-box">
 				<section class="text-center my-2 logo mx-auto z-index-3">
 					<img src="assets/img/Logo1-removebg-preview.png" class="w-100 h-100" alt="logo">
 				</section>
-				<h4 class="text-center my-1 title z-index-3 text-neutral text-lg">
+				<h4 class="register_form_title text-center my-1 title z-index-3 text-darker text-2xl">
 					وارد حساب کاربری شوید
 				</h4>
 				<form class="px-4 py-2 z-index-3">
-					<section class="form-input">
-						<span><i class="fa fa-envelope-o"></i></span>
-						<input class="text-sm pr-3" type="email" name="" placeholder="آدرس ایمیل" tabindex="10" required>
+					<section class="form-input text-right ">
+						<label for="" class="text-lg text-darker pe-2">ایمیل :</label>
+						<span class="p-0 me-3"><i class="material-icons text-black-50">email</i></span>
+						<input class="text-md px-5" type="email" name="" placeholder="آدرس ایمیل" tabindex="10"
+							required>
 					</section>
-					<section class="form-input">
-						<span><i class="fa fa-key"></i></span>
-						<input class="text-sm pr-3" type="password" name="" placeholder="رمز عبور" required>
+					<section class="form-input text-right ">
+						<label for="" class="text-lg text-darker pe-2">رمز عبور :</label>
+						<span class="p-0 me-3"><i class="material-icons text-black-50">password</i></span>
+						<input class="text-md px-5" type="password" name="" placeholder="رمز عبور" required>
 					</section>
 					<section class="mb-3 d-flex align-items-center">
 						<section class="custom-control custom-checkbox">
@@ -44,23 +46,19 @@
 							<label class="custom-control-label text-sm pr-2" for="cb1">مرا به خاطر بسپار</label>
 						</section>
 					</section>
-					<section class="mb-3">
-						<button type="submit" class="btn btn-block text-lg">وارد شوید
+					<section class="my-3">
+						<button type="submit" class="btn btn-block text-lg register_form_submit">وارد شوید
 						</button>
 					</section>
 
-					<section class="text-right ">
-						<a href="reset.html" class="forget-link text-md pr-2">
+					<section class="text-center mt-3">
+						<a href="reset_email.html" class="forget-link text-md pr-2">
 							رمز عبور را فراموش کرده اید؟
 						</a>
 					</section>
-					<section class="text-center my-3 text-neutral text-md">
-						یا با وارد شوید
-					</section>
-
-					<section class="text-center text-lg mb-5 text-neutral">
+					<section class="register_formLogin text-center text-lg  my-3 text-darker">
 						حساب کاربری ندارید؟
-						<a class="register-link text-neutral text-md" href="register.html">اینجا ثبت نام کنید</a>
+						<a class="register-link text-darker text-md" href="signUp.html">اینجا ثبت نام کنید</a>
 					</section>
 				</form>
 			</section>
