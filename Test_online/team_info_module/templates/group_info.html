@@ -1,0 +1,63 @@
+
+{% extends 'shared/_layout.html' %}
+{% block title %}
+    تیم ما
+{% endblock %}
+
+{% block content %}
+    <section class="our-team-info mt-7">
+        <section class="container">
+            <section class="our-team-title">
+                <section class="test-box-title">
+                    <h2 class="mb-2 text-4x1">تیم ما</h2>
+                </section>
+            </section>
+            <section class="mt-4">
+                {% for member in members %}
+                    <section class="card shadow-dark border-0 mt-4">
+                        <section class="row align-items-stretch member position-relative">
+                            <section class="col-lg-4 profile-image z-index-1">
+                                <img src="{{ member.avatar.url }}" class="w-100 h-100 border-radius-top-end-lg border-radius-bottom-end-lg" alt="profile">
+                            </section>
+                            <section class="member-info col-lg-6 mt-4 d-flex">
+                                <section class="member-name position-relative w-45">
+                                    <h2 class="pb-0 text-3xl">{{ member.name }}</h2>
+                                    <h4 class="text-md">{{ member.responsibility.title }}</h4>
+                                </section>
+                                <section class="member-info-link d-flex justify-content-around">
+                                    <section class="member-info-link-text">
+                                        <p class="text-md mt-3">
+                                            {{ member.short_descriptions }}
+                                        </p>
+                                    </section>
+                                    <section class="footer-media pt-3 d-flex justify-content-start">
+                                        <a href="{{ member.url_email }}"
+                                           class="text-white text-lg d-flex align-items-center mb-0 ms-3">
+                                            <img src="/static/img/email-svgrepo-com.svg" alt="email"
+                                                 class="border-radius-section">
+                                        </a>
+                                        <a href="{{ member.url_linkedin}}"
+                                           class="text-white text-lg d-flex align-items-center mb-0 ms-3">
+                                            <img src="/static/img/linkedin-svgrepo-com.svg" alt="Linkedin"
+                                                 class="border-radius-section">
+                                        </a>
+                                        <a href="{{ member.url_whatsapp }}"
+                                           class="text-white text-lg d-flex align-items-center mb-0 ms-3">
+                                            <img src="/static/img/whatsapp-svgrepo-com.svg" alt="whatsapp"
+                                                 class="border-radius-section">
+                                        </a>
+                                        <a href="{{ member.url_telegram }}"
+                                           class="text-white text-lg d-flex align-items-center mb-0 ms-3">
+                                            <img src="/static/img/telegram-svgrepo-com.svg" alt="telegram"
+                                                 class="border-radius-section">
+                                        </a>
+                                    </section>
+                                </section>
+                            </section>
+                        </section>
+                    </section>
+                {% endfor %}
+            </section>
+        </section>
+    </section>
+{% endblock %}

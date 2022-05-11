@@ -1,0 +1,34 @@
+.head {
+    height: 100vh;
+  }
+.main-waves {
+    display: block;
+    width: 100%;
+    height: 150px;
+    z-index: -1;
+    position: relative;
+    background: linear-gradient(0deg, var(--bg-01) 0%, var(--bg-02) 100%);
+    bottom: 30%;
+    transform: rotate(180deg);
+  }
+  
+  .wave1 use {
+    -webkit-animation: move-forever1 10s linear infinite;
+    animation: move-forever1 10s linear infinite;
+    -webkit-animation-delay: -2s;
+    animation-delay: -2s;
+  }
+  
+  .wave2 use {
+    -webkit-animation: move-forever2 8s linear infinite;
+    animation: move-forever2 8s linear infinite;
+    -webkit-animation-delay: -2s;
+    animation-delay: -2s;
+  }
+  
+  .wave3 use {
+    -webkit-animation: move-forever3 6s linear infinite;
+    animation: move-forever3 6s linear infinite;
+    -webkit-animation-delay: -2s;
+    animation-delay: -2s;
+  }
