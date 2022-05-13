@@ -119,26 +119,34 @@ class ReesetPassView(View):
 
     def get(self, request, activeaccount):
         user: User = User.objects.filter(email_active_code__iexact=activeaccount).first()
+        reset_pass = resetPasswordForms()
+        is_error = False
         if user is None:
             return redirect(reverse('logIn_page'))
-
-        reset_pass = resetPasswordForms()
-        return render(request, 'reset_Pass.html', {'reset_pass': reset_pass, 'user': user})
+        print("def get")
+        return render(request, 'reset_Pass.html', {'reset_pass': reset_pass, 'user': user, 'is_error': is_error})
 
     def post(self, request: HttpRequest, activeaccount):
         reset_pass = resetPasswordForms(request.POST)
         user: User = User.objects.filter(email_active_code__iexact=activeaccount).first()
+        is_error = False
+        print("def post")
         if reset_pass.is_valid():
             if user is None:
                 return redirect(reverse('logIn_page'))
-            user_new_pass = reset_pass.cleaned_data.get('password')
-            user.set_password(user_new_pass)
-            user.email_active_code = get_random_string(72)
-            user.is_active = True
-            user.save()
-            return redirect(reverse('logIn_page'))
+            if reset_pass.clean_confirm_password() == reset_pass.cleaned_data.get('password'):
+                user_new_pass = reset_pass.cleaned_data.get('password')
+                user.set_password(user_new_pass)
+                user.email_active_code = get_random_string(72)
+                user.is_active = True
+                user.save()
+                print("valid")
+                return redirect(reverse('logIn_page'))
+            else:
+                print("notttttttttt valid")
+                is_error = True
 
-        return render(request, 'reset_Pass.html', {'reset_pass_form': reset_pass, 'user': user})
+        return render(request, 'reset_Pass.html', {'reset_pass': reset_pass, 'user': user, 'is_error': is_error})
 
 
 class LogoutView(View):

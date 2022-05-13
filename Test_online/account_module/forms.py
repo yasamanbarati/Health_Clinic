@@ -7,7 +7,7 @@ class RegisterForms(forms.Form):
     email = forms.EmailField(
         label='ایمیل',
         widget=forms.EmailInput(attrs={
-            'class': "pr-3 text-sm",
+            'class': "text-md px-5",
             'placeholder': 'ایمیل',
         }),
         validators=[
@@ -19,7 +19,7 @@ class RegisterForms(forms.Form):
         label='رمز عبور',
         widget=forms.PasswordInput(
             attrs={
-                'class': "pr-3 text-sm",
+                'class': "text-md px-5",
                 'placeholder': 'رمز عبور',
             }
         ),
@@ -31,7 +31,7 @@ class RegisterForms(forms.Form):
         label='تکرار رمز عبور',
         widget=forms.PasswordInput(
             attrs={
-                'class': "pr-3 text-sm",
+                'class': "text-md px-5",
                 'placeholder': 'تکرار رمز عبور',
             }
         ),
@@ -48,9 +48,6 @@ class RegisterForms(forms.Form):
         else:
             return comfirm_password
 
-        # if password is comfirm_password:
-        #     return comfirm_password
-        # raise ValidationError('کلمه عبور و تکرار کلمه عبور مغایرت ندارند')
 
     # def clean_confirm_password(self):
     #     passwords=self.cleaned_data.get('passwords')
@@ -65,8 +62,8 @@ class LoginForms(forms.Form):
     email = forms.EmailField(
         label='ایمیل',
         widget=forms.EmailInput(attrs={
-            'class': "number-email-input",
-            'placeholder': '  ایمیل',
+            'class': "text-md px-5",
+            'placeholder': 'ایمیل',
         }),
         required=True,
         error_messages={'required': 'لطفا ایمیل را وارد کنید'},
@@ -79,8 +76,8 @@ class LoginForms(forms.Form):
         label='رمز عبور',
         widget=forms.PasswordInput(
             attrs={
-                'class': "password-input",
-                'placeholder': '  رمز عبور',
+                'class': "text-md px-5",
+                'placeholder': 'رمز عبور',
             }
         ),
         required=True,
@@ -96,7 +93,7 @@ class forgetpasswordForms(forms.Form):
     email = forms.EmailField(
         label='ایمیل',
         widget=forms.EmailInput(attrs={
-            'class': "number-email-input",
+            'class': "text-md px-5",
             'id': "email-phone",
             'placeholder': 'ایمیل',
         }),
@@ -112,34 +109,47 @@ class resetPasswordForms(forms.Form):
         label='رمز عبور',
         widget=forms.PasswordInput(
             attrs={
-                'class': "password-input",
+                'class': "text-md px-5",
                 'placeholder': 'رمز عبور',
             }
         ),
         validators=[
             validators.MaxLengthValidator(100)
-        ]
+        ],
+        required=True,
+        error_messages={'required': 'لطفا رمز عبور را وارد کنید'},
     )
     comfirm_password = forms.CharField(
         label='تکرار رمز عبور',
         widget=forms.PasswordInput(
             attrs={
-                'class': "password-input",
+                'class': "text-md px-5",
                 'placeholder': 'تکرار رمز عبور',
             }
         ),
         validators=[
             validators.MaxLengthValidator(100)
-        ]
+        ],
+        required=True,
+        error_messages={'required': 'لطفا تکرار رمز عبور را وارد کنید'},
     )
 
     def clean_confirm_password(self):
         password = self.cleaned_data.get('password')
         comfirm_password = self.cleaned_data.get('comfirm_password')
         if password != comfirm_password:
-            self.add_error('comfirm_password', "Password does not match")
+            self.add_error('comfirm_password', "رمز عبور و تکرار رمز عبور با یک دیگر مغایرت ندارند")
         else:
             return comfirm_password
+
+
+    # def clean_confirm_password(self):
+    #     password = self.cleaned_data.get('password')
+    #     comfirm_password = self.cleaned_data.get('comfirm_password')
+    #     if password != comfirm_password:
+    #         self.add_error('comfirm_password', "Password does not match")
+    #     else:
+    #         return comfirm_password
 
 
 class CompleteRegisterModelForm(forms.ModelForm):

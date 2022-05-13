@@ -2,89 +2,82 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Register</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link href="/static/css/bootstrap.min.css" rel="stylesheet">
-	<link href="/static/css/bootstrap-icons.css" rel="stylesheet">
-	<link href="/static/css/boxicons.min.css" rel="stylesheet">
-	<link rel="stylesheet" href="/static/css/material-dashboard.min.css">
-	<link rel="stylesheet" href="/static/css/owl.carousel.min.css">
-	<link rel="stylesheet" href="/static/css/owl.theme.default.min.css">
-	<link rel="stylesheet" href="/static/css/blk-design-system.min.css">
-	<link href="/static/css/login&signUp.css" rel="stylesheet" type="text/css">
-	<link rel="stylesheet" href="/static/css/responsive.css">
+    <title>Register</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/material-dashboard.min.css">
+    <link rel="stylesheet" href="/static/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="/static/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="/static/css/blk-design-system.min.css">
+    <link rel="stylesheet" href="/static/font/newFont.css"><link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="/static/css/login&signUp.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/static/css/responsive.css">
 </head>
 <body class="signUp-page bg-white">
-
 <section class="container-fluid">
-    <section class="row justify-content-center">
-        <section class="col-lg-6 col-md-7 col-sm-8 col-11 form-box d-flex flex-column justify-content-center mt-4 position-relative info-box">
-            <section class="background-form">
-                <img src="/static/img/images.jpg" alt="background" class="w-100 h-100">
-            </section>
+    <section class="register_form row justify-content-center align-items-center">
+        <section class="col-lg-4 col-md-7 col-sm-8 col-11 form-box d-flex flex-column justify-content-center position-relative info-box">
             <section class="text-center mt-4 logo mx-auto z-index-3">
-                <img  src="/static/img/Logo1-removebg-preview.png" alt="logo">
+                <img  src="/static/img/Logo1-removebg-preview.png" alt="logo"  class="w-100 h-100">
             </section>
-            <h4 class="text-center mt-4 title z-index-3 text-neutral text-lg">
+            <h4 class="register_form_title text-center mt-4 title z-index-3 text-darker text-2xl">
                 یک حساب کاربری ایجاد کنید
             </h4>
             <form class="px-2 px-md-3 px-sm-3 px-lg-3 py-2 z-index-3" action="{% url 'register_page' %}" method="post">
                 {% csrf_token %}
-                <section class="form-input" style="margin-bottom: 10px">
-                  <span style="margin-block: 35px;">{{ register_form.email.errors }}</span>
+                {% if register_form.email.errors %}
+                    <span class="text-right" >
+                    <div class="alert alert-danger" style=" padding: 2px 2px 0px 0px" role="alert">
+                        {{ register_form.email.errors }}
+                    </div></span>
+                {% endif %}
+                {% if register_form.password.errors %}
+                    <span class="text-right" >
+                    <div class="alert alert-danger" style=" padding: 2px 2px 0px 0px" role="alert">
+                        {{ register_form.password.errors }}
+                    </div></span>
+                {% endif %}
+                {% if register_form.comfirm_password.errors %}
+                    <span class="text-right" >
+                    <div class="alert alert-danger" style=" padding: 2px 2px 0px 0px" role="alert">
+                        {{ register_form.comfirm_password.errors }}
+                    </div></span>
+                {% endif %}
+                <section class="form-input text-right ">
+                    <label class="text-lg text-darker pe-2">{{ register_form.email.label }} :</label>
+                    <span class="p-0 me-3"><i class="material-icons text-black-50">email</i></span>
                     {{ register_form.email }}
                 </section>
 
-                <section class="form-input" >
-                    <span style="margin-block: 35px;"> {{ register_form.password.errors }}</span>
+                <section class="form-input text-right " >
+                    <label class="text-lg text-darker pe-2">{{ register_form.password.label }} :</label>
+                    <span class="p-0 me-3"><i class="material-icons text-black-50">password</i></span>
                     {{ register_form.password }}
                 </section>
-                <section class="form-input"  style="margin-bottom: 10px">
-                    <span style="margin-block: 35px;"> {{ register_form.comfirm_password.errors }}</span>
+                <section class="form-input text-right ">
+                    <label class="text-lg text-darker pe-2">{{ register_form.comfirm_password.label }} :</label>
+                    <span class="p-0 me-3"><i class="material-icons text-black-50">password</i></span>
                     {{ register_form.comfirm_password }}
                 </section>
-
-{% comment %}                  <section class="mt-3 d-flex align-items-center">
-                    <section class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="cb1">
-                        <label class="custom-control-label text-right text-xs pr-1 pr-sm-2 pr-d-2 pr-lg-2" for="cb1">من با تمام شرایط و ضوابط موافقم</label>
-                    </section>
-                </section>{% endcomment %}
+{#                <section class="mt-3 d-flex align-items-center">#}
+{#                    <section class="custom-control custom-checkbox">#}
+{#                        <input type="checkbox" class="custom-control-input" id="cb1">#}
+{#                        <label class="custom-control-label text-right text-sm pr-1 pr-sm-2 pr-d-2 pr-lg-2" for="cb1">من با تمام شرایط و ضوابط موافقم</label>#}
+{#                    </section>#}
+{#                </section>#}
                 <section class="mt-4">
-                    <button type="submit" class="btn btn-block text-lg">
+                    <button type="submit" class="btn btn-block text-lg register_form_submit">
                         ثبت نام
                     </button>
                 </section>
-{#                <section class="text-center mt-4 text-lg text-neutral">#}
-{#                    یا ثبت نام با#}
-{#                </section>#}
-{#                <section class="row mt-4 px-2">#}
-{#                    <section class="col-4">#}
-{#                        <a href="" class="btn btn-block btn-social facebook btn-facebook px-0 py-2">#}
-{#                            <i class="bx bxl-facebook text-2xl"></i>#}
-{#                        </a>#}
-{#                    </section>#}
-{#                    <section class="col-4">#}
-{#                        <a href="" class="btn btn-block btn-social google btn-google px-0 py-2">#}
-{#                            <i class="bx bxl-google text-2xl"></i>#}
-{#                        </a>#}
-{#                    </section>#}
-{#                    <section class="col-4">#}
-{#                        <a href="" class="btn btn-block btn-social twitter btn-twitter px-0 py-2">#}
-{#                            <i class="bx bxl-twitter text-2xl"></i>#}
-{#                        </a>#}
-{#                    </section>#}
-{#                </section>#}
-                <section class="text-center my-4 text-neutral text-md">
-                    قبلاً یک حساب کاربری دارید؟
-                    <a class="login-link pr-1" href="{% url 'logIn_page' %}">از اینجا وارد شوید</a>
-                </section>
+                قبلاً یک حساب کاربری دارید؟
+                <a class="login-link pr-1 text-darker text-md" href="{% url 'logIn_page' %}">از اینجا وارد شوید</a>
+
             </form>
         </section>
     </section>
 </section>
-
-
 </body>
 </html>
