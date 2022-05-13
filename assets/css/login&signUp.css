@@ -117,9 +117,7 @@ body {
     color: rgb(225, 225, 225) !important;
 }
 .form-input label,
-.custom-control-label,
-.register_form_submit,
-.register_formLogin
+.custom-control-label
 {
     color: var(--bg-dark);
     font-weight: 600 !important;
@@ -129,6 +127,10 @@ body {
 .register_form_submit:not(:disabled):not(.disabled):active{
     background: linear-gradient(to right , var(--bg-01) , var(--bg-02)) !important;
 }
-.form-input p{
+.form-input p,
+.register_form_submit,
+.register_formLogin
+{
     font-weight: 400;
+    color: var(--bg-dark);
 }
