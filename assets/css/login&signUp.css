@@ -137,6 +137,10 @@ body {
 .custom-control-label:before {
     pointer-events: none;
     user-select: none;
-    background-color: var(--bg-01);
+    background-color: var(--bg-02);
     box-shadow: none;
+    right: 0;
+}
+.custom-control-label:after {
+    right: 0px; !important
 }

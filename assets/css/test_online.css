@@ -3,12 +3,20 @@
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
+:root {
+    --bg-01: #ffa8b7;
+    --bg-02: #7fc6da;
+    --bg-03: #a9c97b;
+    --bg-04:  linear-gradient(to right , #ffa8b7 , #7fc6da);
+    --bg-light: #fff;
+    --bg-dark: #000;
+}
 
 body {
     font-size: 14px;
     margin: 0;
     color: #999;
-    background: url("../img/form-wizard-bg.jpg") no-repeat center center;
+    background-color: #f6f5f0;
     height: 100vh;
     background-size: cover;
     display: flex;
@@ -107,25 +115,24 @@ img {
     border: 1px solid #e6e6e6;
     width: 100%;
     background: none;
-    padding: 0 35px 0 19px;
+    padding: 0 15px;
     color: #999;
 }
-.form-control:focus {
-    border-color: #8eb852;
+.form-control::placeholder{
+    font-size: 0.78rem;
+    color: #8a8a8a;
+    font-weight: 500;
+    
 }
-.form-control::-webkit-input-placeholder {
-    color: #999;
+.form-control:focus,
+.form-control:valid {
+    border: 1px solid var(--bg-03);
 }
-.form-control::-moz-placeholder {
-    color: #999;
+.form-control:focus{
+    border: 1.5px solid var(--bg-03);
+    outline: 0;
+    box-shadow: 0px 2px 5px 0px #b2e9de;
 }
-.form-control:-ms-input-placeholder {
-    color: #999;
-}
-.form-control:-moz-placeholder {
-    color: #999;
-}
-
 .actions {
     margin-top: 30px;
 }
@@ -147,7 +154,7 @@ img {
     align-items: center;
     color: #fff;
     cursor: pointer;
-    background: #8eb852;
+    background: var(--bg-03);
     text-transform: uppercase;
     justify-content: center;
     letter-spacing: 1px;
