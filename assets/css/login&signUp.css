@@ -133,10 +133,10 @@ body {
 {
     font-weight: 400;
     color: var(--bg-dark);
-}
-.custom-control-input{
-    position: relative;
-    opacity: 1;
-    width: 18px;
-    height: 18px;
+}   
+.custom-control-label:before {
+    pointer-events: none;
+    user-select: none;
+    background-color: var(--bg-01);
+    box-shadow: none;
 }
