@@ -275,6 +275,10 @@ a {
 .svg-box{
   top: -80px;
 }
+/* .services-svg-box{
+  background-color: var(--bg-01);
+} */
+/* footer */
 .footer_cover {
   height: 200px;
   transform: rotate(180deg);
