@@ -271,6 +271,10 @@ a {
   width: 160px;
   height: 160px;
 }
+/* about us */
+.svg-box{
+  top: -80px;
+}
 .footer_cover {
   height: 200px;
   transform: rotate(180deg);
