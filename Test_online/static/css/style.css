@@ -70,11 +70,6 @@ a {
 }
 .main-slider p {
   font-weight: 400;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 .main .animated {
   animation: up-down 2s ease-in-out infinite alternate-reverse both;
@@ -106,37 +101,7 @@ a {
 .main-slider .owl-nav button.owl-prev span {
   font-size: 30px;
 }
-.services-box::after,
-.services-box::before {
-  position: absolute;
-  content: "";
-  background: var(--bg-03);
-  width: 46%;
-  height: 3px;
-  top: 20px;
-  right: 0px;
-}
-.services-box::before {
-  left: 0px;
-  right: auto;
-}
-.services-title::after,
-.services-title::before {
-  position: absolute;
-  content: "";
-  background: var(--bg-01);
-  width: 20%;
-  height: 3px;
-  top: 20px;
-  left: auto;
-  right: 25.2%;
-  z-index: 1;
-}
-.services-title::before {
-  left: 25.2%;
-  right: auto;
-}
-.services-title h2 {
+.process-title h2 {
   font-weight: 800;
 }
 .stap-img {
@@ -154,7 +119,7 @@ a {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.services-index .col-md-3::after {
+.process-index .col-md-3::after {
   position: absolute;
   content: " ";
   width: 100%;
@@ -162,9 +127,8 @@ a {
   bottom: 100%;
   right: 75%;
   background: url(../img/process-line.png) no-repeat scroll 0 0 / cover;
-  z-index: 2;
 }
-.services-index .col-md-3:last-child::after {
+.process-index .col-md-3:last-child::after {
   display: none;
 }
 /* test-online */
@@ -191,25 +155,18 @@ a {
 }
 .test-box-info p {
   font-weight: 400;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 .test-box-info-btn {
-  font-weight: 600 !important;
+  font-weight: 600;
   background-color: var(--bg-01);
   color: var(--bg-light);
-  transition: 0.7s ease;
 }
 .test-box-info-btn:hover {
   color: var(--bg-dark);
+  transform: scale(1.01);
   background-color: transparent;
   border: 0.125rem solid var(--bg-01);
-  transition: 0.7s ease;
-  transform: scale(1);
-  box-shadow: 0px 2px 4px 2px #d9d9d9;
+  font-weight: 600;
 }
 .test-box-imgBox::after {
   content: "";
@@ -257,51 +214,34 @@ a {
 .owl-theme .owl-dots .owl-dot:hover span {
   background: var(--bg-01);
 }
-/* about us */
-.about-team-box p {
+/* about us */  
+.about-team-box p{
   font-weight: 600;
 }
-.about-team-box h2::before {
+.about-team-box h2::before{
   width: 65px;
 }
-.about-info-list li {
+.about-info-list li{
   list-style: disc;
 }
-.our-services img {
+.our-services img{
   width: 160px;
   height: 160px;
 }
-/* about us */
-.svg-box{
-  top: -80px;
-}
-/* .services-svg-box{
-  background-color: var(--bg-01);
-} */
-/* footer */
 .footer_cover {
   height: 200px;
   transform: rotate(180deg);
 }
 .footer-logo img {
-  height: 80px;
+  width: 150px;
+  height: 50px;
 }
 .footer-info p {
   font-weight: 600;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
-.footer-media a svg {
+.footer-media a img {
   width: 40px;
   height: 40px;
-  border-radius: 50%;
-  transition: 0.8s ease-in-out;
-}
-.footer-media a:hover svg{
-  fill: var(--bg-02)!important;
 }
 .footer-link_title h2 {
   font-weight: 800;
@@ -309,7 +249,7 @@ a {
 .footer-link ul li a {
   font-weight: 600;
 }
-.member::after {
+.member::after{
   position: absolute;
   content: "";
   width: 65%;
@@ -319,20 +259,20 @@ a {
   top: 99px;
   z-index: 0;
 }
-.member-info {
+.member-info{
   flex-direction: column;
 }
 .member-name {
   border-bottom: 4px solid var(--bg-03);
 }
 .member-name h2,
-.member-name h4 {
+.member-name h4{
   font-weight: 800;
 }
-.member-name h4 {
+.member-name h4{
   color: var(--bg-01);
 }
-.member-icon {
+.member-icon{
   color: var(--bg-03);
 }
 .member-info-link {
@@ -340,24 +280,11 @@ a {
   height: 65%;
 }
 .member-info-link-text h3,
-.member-info-link-text p {
-  font-weight: 600;
-  display: -webkit-box;
-  -webkit-line-clamp: 5;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis;
+.member-info-link-text p{
+font-weight: 600;
 }
-.profile-image {
+.profile-image{
   height: 380px;
-}
-.footer-media_icon i{
-  font-size: 46px;
-  color: var(--bg-01);
-  transition: 0.5s ease;
-}
-.footer-media_icon:hover i{
-  color: var(--bg-02);
 }
 @keyframes up-down {
   0% {

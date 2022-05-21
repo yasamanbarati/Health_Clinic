@@ -1,0 +1,11 @@
+<div dir="rtl">
+    <h2>فعال سازی حساب کاربری</h2>
+    <hr>
+    <p> کاربری گرامی :<br>
+        این ایمل جهت بازیابی فعال سازی حساب کاربری ارسال شده است.<br>
+        لطفا روی لینک زیر کلیک کنید.
+    </p>
+    <p>
+        <a href="http://localhost:8000{% url 'activate_account' activeCode=user.email_active_code %}">فعالسازی حساب کاربری </a>
+    </p>
+</div>
