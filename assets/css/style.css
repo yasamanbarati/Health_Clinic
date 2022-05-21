@@ -273,11 +273,20 @@ a {
 }
 /* about us */
 .svg-box{
-  top: -80px;
+  top: -100px;
+  background-color: #00bbd43d;
+  box-shadow: 0px 1px 6px 1px #e0d8d8;
+  border-radius: 20%;
 }
-/* .services-svg-box{
-  background-color: var(--bg-01);
-} */
+.services-item {
+  border-radius: 50px;
+}
+.services_info_title {
+  font-weight: 800;
+}
+.services_info_p{
+  font-weight: 600;
+}
 /* footer */
 .footer_cover {
   height: 200px;
