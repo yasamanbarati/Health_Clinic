@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>انتخاب بیماری</h3>
+<form action="{% url 'Disease_group' %}" method="post">
+    {% csrf_token %}
+        {% for disseas in dissease %}
+            <input type="checkbox" id="{{ disseas.title }}" name="fav_language" value="{{ disseas.title }}" >
+            <label for="{{ disseas.title }}">{{ disseas.title }}</label>
+            <br>
+
+        {% endfor %}         <input type="submit" name="submit" class="btn btn-primary pull-right" value="ارسـال">
+</form>
+</body>
+</html>
