@@ -20,15 +20,16 @@
 <body class="login-page">
 <section class="container-fluid">
     <section class="register_form row justify-content-center align-items-center">
-        <section
-                class="col-lg-4 col-md-7 col-sm-8 col-11 form-box d-flex flex-column justify-content-center position-relative info-box">
+        <section class="col-lg-4 col-md-7 col-sm-8 col-11 form-box d-flex flex-column justify-content-center position-relative info-box">
+
+
             <section class="text-center my-2 logo mx-auto z-index-3">
                 <img src="/static/img/Logo1-removebg-preview.png" class="w-100 h-100" alt="logo">
             </section>
             <h4 class="register_form_title text-center my-1 title z-index-3 text-darker text-2xl">
                 وارد حساب کاربری شوید
             </h4>
-            <form class="px-4 py-2 z-index-3" action="{% url 'logIn_page' %}" method="post">
+            <form novalidate  class="px-4 py-2 z-index-3" action="{% url 'logIn_page' %}" method="post">
                 {% csrf_token %}
 
                 {% if loginForm.email.errors %}
@@ -73,7 +74,7 @@
                     </a>
                 </section>
                 حساب کاربری ندارید؟
-                <a class="register-link text-darker text-md" href="signUp.html">اینجا ثبت نام کنید</a>
+                <a class="register-link text-darker text-md" href="{% url 'register_page' %}">اینجا ثبت نام کنید</a>
             </form>
         </section>
     </section>

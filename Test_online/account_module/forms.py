@@ -10,6 +10,7 @@ class RegisterForms(forms.Form):
             'class': "text-md px-5",
             'placeholder': 'ایمیل',
         }),
+        error_messages={'required': 'لطفا ایمیل را وارد کنید'},
         validators=[
             validators.MaxLengthValidator(100),
             validators.EmailValidator,
@@ -23,6 +24,11 @@ class RegisterForms(forms.Form):
                 'placeholder': 'رمز عبور',
             }
         ),
+        min_length=6,
+        error_messages={'required': 'لطفا تکرار رمز عبور را وارد کنید',
+                        'min_length': 'رمز عبور شما باید حداقل 6 کاراکتر باشد',
+                        },
+
         validators=[
             validators.MaxLengthValidator(100)
         ]
@@ -35,6 +41,8 @@ class RegisterForms(forms.Form):
                 'placeholder': 'تکرار رمز عبور',
             }
         ),
+        error_messages={'required': 'لطفا تکرار رمز عبور را وارد کنید'},
+
         validators=[
             validators.MaxLengthValidator(100)
         ]
@@ -80,8 +88,11 @@ class LoginForms(forms.Form):
                 'placeholder': 'رمز عبور',
             }
         ),
+
         required=True,
-        error_messages={'required': 'لطفا رمز عبور را وارد کنید'},
+        min_length=6,
+        error_messages={'required': 'لطفا رمز عبور را وارد کنید'
+                        },
         validators=[
             validators.MaxLengthValidator(100),
 
@@ -97,6 +108,10 @@ class forgetpasswordForms(forms.Form):
             'id': "email-phone",
             'placeholder': 'ایمیل',
         }),
+
+        required=True,
+        error_messages={'required': 'لطفا ایمیل را وارد کنید'
+                        },
         validators=[
             validators.MaxLengthValidator(100),
             validators.EmailValidator,
@@ -107,17 +122,21 @@ class forgetpasswordForms(forms.Form):
 class resetPasswordForms(forms.Form):
     password = forms.CharField(
         label='رمز عبور',
+
         widget=forms.PasswordInput(
             attrs={
                 'class': "text-md px-5",
                 'placeholder': 'رمز عبور',
             }
         ),
+
         validators=[
             validators.MaxLengthValidator(100)
         ],
         required=True,
-        error_messages={'required': 'لطفا رمز عبور را وارد کنید'},
+        min_length=6,
+        error_messages={'required': 'لطفا تکرار رمز عبور را وارد کنید',
+                        'min_length': 'رمز عبور شما باید حداقل 6 کاراکتر باشد'},
     )
     comfirm_password = forms.CharField(
         label='تکرار رمز عبور',
@@ -131,7 +150,9 @@ class resetPasswordForms(forms.Form):
             validators.MaxLengthValidator(100)
         ],
         required=True,
-        error_messages={'required': 'لطفا تکرار رمز عبور را وارد کنید'},
+        min_length=6,
+        error_messages={'required': 'لطفا تکرار رمز عبور را وارد کنید',
+                        'min_length': 'رمز عبور شما باید حداقل 6 کاراکتر باشد'},
     )
 
     def clean_confirm_password(self):
