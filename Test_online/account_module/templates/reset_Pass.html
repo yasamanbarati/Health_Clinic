@@ -17,14 +17,22 @@
 </head>
 <body class="signUp-page bg-white">
 <section class="container-fluid">
+
     <section class="register_form row justify-content-center align-items-center">
         <section class="col-lg-4 col-md-7 col-sm-8 col-11 form-box d-flex flex-column justify-content-center position-relative info-box">
             <section class="text-center mt-4 logo mx-auto z-index-3">
                 <img  src="/static/img/Logo1-removebg-preview.png" alt="logo"  class="w-100 h-100">
             </section>
-<h4 class="register_form_title text-center mt-1 text-darker text-2xl z-index-3">رمز عبور خود را بازنشانی کنید</h4>
-            <form class="px-2 px-md-3 px-sm-3 px-lg-3 py-2 z-index-3" action="{% url 'reset_pass_page' user.email_active_code %}" method="post">
+            <h4 class="register_form_title text-center mt-1 text-darker text-2xl z-index-3">رمز عبور خود را بازنشانی کنید</h4>
+            <form novalidate class="px-2 px-md-3 px-sm-3 px-lg-3 py-2 z-index-3" action="{% url 'reset_pass_page' user.email_active_code %}" method="post">
                 {% csrf_token %}
+                {% if reset_pass.password.errors %}
+                    <span class="text-right" >
+                    <div class="alert alert-danger" style=" padding: 2px 2px 0px 0px" role="alert">
+                       {{ reset_pass.password.errors }}
+                    </div></span>
+                {% endif %}
+
                 {% if reset_pass.comfirm_password.errors %}
                     <span class="text-right" >
                     <div class="alert alert-danger" style=" padding: 2px 2px 0px 0px" role="alert">
