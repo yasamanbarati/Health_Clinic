@@ -60,7 +60,8 @@ class LoginView(View):
             user: User = User.objects.filter(email__iexact=user_email).first()
             if user is not None:
                 if not user.is_active:
-                    login_form.add_error('email', 'حساب کاربری شما فعال نشده است')
+                    login_form.add_error('email',
+                                         'حساب کاربری شما فعال نشده است برای فعال سازی روی ایمیل ارسال شده کلیک کنید')
                 else:
                     is_password_correct = user.check_password(user_pass)
                     if is_password_correct:
