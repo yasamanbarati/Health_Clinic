@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/material-dashboard.min.css">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/font/newFont.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="assets/font/newFont.css">
     <link rel="stylesheet" href="assets/css/test_online.css">
     <title>Document</title>
 </head>
@@ -53,24 +53,29 @@
                                     <label for="" class="text-sm text-dark">: زیر مجموعه بیماری </label>
                                     <input type="text"
                                         class="btn btn-white dropdown-toggle form-control text-sm text-end w-100 bg-transparent py-0 px-4 text-dark position-relative"
-                                        type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
-                                        aria-expanded="false" placeholder="بیماری خود را جستوجو کنید"
-                                        onkeyup="filterFunction()" 
-                                        autocomplete="off">
-                                    <button class="filter_close" onclick="createSpan()">
+                                        type="button" id="dis_input" data-bs-toggle="dropdown" aria-expanded="false"
+                                        placeholder="بیماری خود را جستوجو کنید" onkeyup="filterFunction()"
+                                        autocomplete="off" onkeypress="showDownBtn()">
+
+                                    <button class="filter_close" onclick="createDic()">
                                         <i class="material-icons">done</i>
                                     </button>
-                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                        <li><a class="dropdown-item text-sm text-dark text-end" href="#">بیماری 0</a>
+
+                                    <ul class="dropdown-menu" aria-labelledby="dis_input">
+                                        <li><a class="dropdown-item text-sm text-dark text-end" href="#"
+                                                onclick="dropdwnValue(this)">بیماری 0</a>
                                         </li>
-                                        <li><a class="dropdown-item text-sm text-dark text-end" href="#">بیماری 01</a>
+                                        <li><a class="dropdown-item text-sm text-dark text-end" href="#"
+                                                onclick="dropdwnValue(this)">بیماری 01</a>
                                         </li>
-                                        <li><a class="dropdown-item text-sm text-dark text-end" href="#">بیماری 02</a>
+                                        <li><a class="dropdown-item text-sm text-dark text-end" href="#"
+                                                onclick="dropdwnValue(this)">بیماری 02</a>
                                         </li>
                                     </ul>
                                     <!--  -->
                                     <section id="dis_box"
                                         class="d-flex justify-content-end align-items-center flex-wrap">
+                                        <!-- این باکس یا استفاده از جاوااسکریپت ایجاد شده -->
                                         <!-- <span class="dis_box_span">
                                             <button class="dis_box_btn">
                                                 <i class="material-icons">close</i>
@@ -79,26 +84,6 @@
                                         </span> -->
                                     </section>
                                     <!--  -->
-                                </section>
-                                <section id="myDropdown" class="dropdown form-holder w-50 me-4 text-end">
-                                    <label for="" class="text-sm  text-dark">: بیماری </label>
-                                    <input type="text"
-                                    class="btn btn-white dropdown-toggle form-control text-sm text-end w-100 bg-transparent py-0 px-4 text-dark position-relative"
-                                    type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
-                                    aria-expanded="false" placeholder="بیماری خود را جستوجو کنید"
-                                    onkeyup="filterFunction()" 
-                                    autocomplete="off">
-                                <button class="filter_close" onclick="createSpan()">
-                                    <i class="material-icons">done</i>
-                                </button>
-                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                        <li><a class="dropdown-item text-sm text-dark text-end" href="#">بیماری 001</a>
-                                        </li>
-                                        <li><a class="dropdown-item text-sm text-dark text-end" href="#">بیماری 002</a>
-                                        </li>
-                                        <li><a class="dropdown-item text-sm text-dark text-end" href="#">بیماری 003</a>
-                                        </li>
-                                    </ul>
                                 </section>
                             </section>
                         </section>
@@ -118,7 +103,6 @@
                     </section>
                 </form>
             </section>
-            <img src="assets/img/images-removebg-preview.png" alt="" class="position-absolute z-index-0 bg-img">
         </section>
     </section>
 </body>
