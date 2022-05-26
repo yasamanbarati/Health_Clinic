@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>نمایش غذا های پیشنهادی برای شما</h3>
+<ul>
+{% for foo in listFood %}
+ <h4>   <li>نام غذا:  <spam>{{ foo.name }}</spam></li></h4>
+
+
+{% endfor %}
+   </ul>
+
+</body>
+</html>
