@@ -22,7 +22,6 @@ urlpatterns = [
     path('', include('Home_module.urls')),
     path('account/', include('account_module.urls')),
     path('BMI/', include('BMI_module.urls')),
-    path('', include('team_info_module.urls')),
 ]
 
 

@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     'BMI_module',
     'Home_module',
     'django_render_partial',
-    'team_info_module',
 ]
 
 MIDDLEWARE = [
