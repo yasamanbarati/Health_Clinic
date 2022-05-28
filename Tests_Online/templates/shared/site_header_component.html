@@ -10,7 +10,7 @@
                         <a class="nav-link active text-md text-dark" aria-current="page" href="{% url 'home_page' %}">خانه</a>
                     </section>
                     <section class="nav-item position-relative">
-                        <a class="nav-link text-md text-dark" aria-current="page" href="">خدمات ما</a>
+                        <a class="nav-link text-md text-dark" aria-current="page" href="{% url 'our_service_page' %}">خدمات ما</a>
 
                     </section>
 {#                    <section class="nav-item position-relative">#}
@@ -67,7 +67,7 @@
                                         </a>
                                     </section>
                                     <section class="navbar-responsive-item position-relative py-3">
-                                        <a href="" class=" text-dark text-lg d-flex align-items-center mb-0 ">
+                                        <a href="{% url 'our_service_page' %}" class=" text-dark text-lg d-flex align-items-center mb-0 ">
                                             <i
                                                     class="material-icons  bg-gradient-faded-success-vertical text-neutral shadow-lg rounded-circle z-index-1 p-2 mx-3">medical_services</i>
                                             خدمات ما

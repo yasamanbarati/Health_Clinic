@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'Home_module',
     'our_services_module',
     'django_render_partial',
+    'sorl.thumbnail',
 ]
 
 MIDDLEWARE = [
