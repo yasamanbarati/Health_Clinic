@@ -73,6 +73,13 @@
                         رمز عبور را فراموش کرده اید؟
                     </a>
                 </section>
+
+                <section class="d-flex justify-content-center align-items-center">
+                    <p class="register_formLogin text-center text-lg  mb-0 text-darker">
+                        حساب گوگل دارید؟ </p>
+                    <a class="register-link text-darker text-md me-2" href="{% url 'social:begin' 'google-oauth2' %}"   >از اینجا وارد شوید</a>
+                </section>
+
                 حساب کاربری ندارید؟
                 <a class="register-link text-darker text-md" href="{% url 'register_page' %}">اینجا ثبت نام کنید</a>
             </form>
