@@ -41,7 +41,12 @@ INSTALLED_APPS = [
     'Home_module',
     'our_services_module',
     'django_render_partial',
+<<<<<<< HEAD
     'sorl.thumbnail',
+=======
+    'team_info_module',
+    'social_django',
+>>>>>>> fdc710e870f084bec1259f6636b1514fa750b4bb
 ]
 
 MIDDLEWARE = [
@@ -145,3 +150,22 @@ MEDIA_URL = '/medias/'
 # STATICFILES_DIRS = [
 #     BASE_DIR / ''
 # ]
+
+
+
+# social auth configuration
+
+AUTHENTICATION_BACKENDS = (
+    'social_core.backends.google.GoogleOAuth2',
+    'django.contrib.auth.backends.ModelBackend',
+)
+
+LOGIN_URL = '/auth/login/google-oauth2/'
+
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
+SOCIAL_AUTH_URL_NAMESPACE = 'social'
+
+
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '963779639903-r0le0q1hm7u6rbb8b4a9brq5631jevi3.apps.googleusercontent.com'
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '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'
