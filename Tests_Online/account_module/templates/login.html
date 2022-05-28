@@ -58,12 +58,12 @@
                     {{ loginForm.password }}
                 </section>
                 {% comment %}					<section class="mb-3 d-flex align-items-center">
-						<section class="custom-control custom-checkbox">
+                    <section class="custom-control custom-checkbox">
 							<input type="checkbox" class="custom-control-input" id="cb1">
 							<label class="custom-control-label text-sm pr-2" for="cb1">مرا به خاطر بسپار</label>
 						</section>
 					</section>{% endcomment %}
-                <section class="my-3">
+                    <section class="my-3">
                     <button type="submit" class="btn btn-block text-lg register_form_submit">وارد شوید
                     </button>
                 </section>
@@ -79,9 +79,10 @@
                         حساب گوگل دارید؟ </p>
                     <a class="register-link text-darker text-md me-2" href="{% url 'social:begin' 'google-oauth2' %}"   >از اینجا وارد شوید</a>
                 </section>
-
-                حساب کاربری ندارید؟
-                <a class="register-link text-darker text-md" href="{% url 'register_page' %}">اینجا ثبت نام کنید</a>
+                <p class="register_formLogin text-center text-lg  mb-0 text-darker">
+                    حساب کاربری ندارید؟</p>
+                    <a class="register-link text-darker text-md me-2" href="{% url 'register_page'  %}">اینجا ثبت نام کنید</a>
+                </section>
             </form>
         </section>
     </section>
