@@ -1,6 +1,7 @@
 from django import forms
 from django.core import validators
 from . import models
+from .models import User
 
 
 class RegisterForms(forms.Form):
@@ -216,3 +217,49 @@ class CompleteRegisterModelForm(forms.ModelForm):
         # },
         #
         # }
+
+
+class EditPanelModelForm(forms.ModelForm):
+
+    def __init__(self, *args, **kwargs):
+        super(EditPanelModelForm, self).__init__(*args, **kwargs)
+        self.fields['first_name'].required = True
+        self.fields['last_name'].required = True
+
+    class Meta:
+        model = User
+        fields = ['first_name', 'last_name', 'email']
+        widgets = {
+            'first_name': forms.TextInput(attrs={
+                'class': 'form-control text-sm text-end w-100 bg-transparent py-0 ps-4 pe-5 text-dark',
+                'placeholder': 'نام  خود را وارد کنید',
+            }),
+            'last_name': forms.TextInput(attrs={
+                'class': 'form-control text-sm text-end w-100 bg-transparent py-0 ps-4 pe-5 text-dark',
+                'placeholder': 'نام خود را وارد کنید',
+            }),
+
+            'email': forms.TextInput(attrs={
+                'class': 'form-control text-sm text-end w-100 bg-transparent py-0 ps-4 pe-5 text-dark',
+                'placeholder': 'ایمیل خود را وارد کنید',
+            }),
+        }
+        labels = {
+            'first_name': 'نام ',
+            'last_name': ' نام خانوادگی ',
+            'email': 'ایمیل',
+        }
+
+        error_messages = {
+            'first_name': {
+                'required': 'نام اجباری میباشد ,لطفا آن را وارد کنید.'
+            },
+            'last_name': {
+                'required': 'نام خانوادگی اجباری میباشد ,لطفا آن را وارد کنید.'
+            },
+            'email': {
+                'required': 'ایمیل اجباری میباشد ,لطفا آن را وارد کنید.'
+            },
+        }
+
+

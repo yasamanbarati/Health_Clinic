@@ -161,30 +161,30 @@ class LogoutView(View):
 #     template_name = 'contact_us_page.html'
 #     success_url = '/register/'
 
-class EditUserProfilePage(View):
-    def get(self, request: HttpRequest):
-        user = User.objects.filter(id=request.user.id).first()
-        form = forms.CompleteRegisterModelForm(instance=user)
-        context = {
-            'user': user,
-            'form': form
-        }
-        return render(request, 'contact_us_page.html', context)
-
-    def post(self, request: HttpRequest):
-        user = User.objects.filter(id=request.user.id).first()
-        form = forms.CompleteRegisterModelForm(request.POST, request.FILES, instance=user)
-        if form.is_valid():
-            print("this is_valid")
-            user.save()
-            form.save()
-            return redirect(reverse('register_page'))
-
-        context = {
-            'user': user,
-            'form': form
-        }
-        return render(request, 'contact_us_page.html', context)
+# class EditUserProfilePage(View):
+#     def get(self, request: HttpRequest):
+#         user = User.objects.filter(id=request.user.id).first()
+#         form = forms.CompleteRegisterModelForm(instance=user)
+#         context = {
+#             'user': user,
+#             'form': form
+#         }
+#         return render(request, 'contact_us_page.html', context)
+#
+#     def post(self, request: HttpRequest):
+#         user = User.objects.filter(id=request.user.id).first()
+#         form = forms.CompleteRegisterModelForm(request.POST, request.FILES, instance=user)
+#         if form.is_valid():
+#             print("this is_valid")
+#             user.save()
+#             form.save()
+#             return redirect(reverse('register_page'))
+#
+#         context = {
+#             'user': user,
+#             'form': form
+#         }
+#         return render(request, 'contact_us_page.html', context)
 
 # class EditUserProfilePage(View):
 #     def get(self, request: HttpRequest):
@@ -208,3 +208,27 @@ class EditUserProfilePage(View):
 #             'user': current_user
 #         }
 #         return render(request, 'contact_us_page.html', context)
+
+
+class EditUserProfilePage(View):
+    def get(self, request: HttpRequest):
+        current_user = User.objects.filter(id=request.user.id).first()
+        form = forms.EditPanelModelForm(instance=current_user)
+        context = {
+            'form': form,
+            'user': current_user
+        }
+        return render(request, 'complates_info_user/complates_info.html', context)
+
+    def post(self, request: HttpRequest):
+        current_user = User.objects.filter(id=request.user.id).first()
+        edit_form = forms.EditPanelModelForm(request.POST, request.FILES, instance=current_user)
+        if edit_form.is_valid():
+            edit_form.save(commit=True)
+            current_user.save()
+            return redirect(reverse('calculate_bmi'))
+        context = {
+            'form': edit_form,
+            'user': current_user
+        }
+        return render(request, 'complates_info_user/complates_info.html', context)
