@@ -72,7 +72,7 @@ class LoginView(View):
                 else:
                     is_password_correct = user.check_password(user_pass)
                     if is_password_correct:
-                        login(request, user)
+                        login(request, user, backend='django.contrib.auth.backends.ModelBackend')
                         return redirect(reverse('home_page'))
                     else:
                         login_form.add_error('email', 'کلمه عبور اشتباه است')
