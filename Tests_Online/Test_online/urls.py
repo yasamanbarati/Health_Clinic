@@ -22,8 +22,12 @@ urlpatterns = [
     path('', include('Home_module.urls')),
     path('account/', include('account_module.urls')),
     path('BMI/', include('BMI_module.urls')),
+<<<<<<< HEAD
+    path('', include('our_services_module.urls')),
+=======
     path('', include('team_info_module.urls')),
     path('', include('social_django.urls', namespace='social')),
+>>>>>>> fdc710e870f084bec1259f6636b1514fa750b4bb
 ]
 
 

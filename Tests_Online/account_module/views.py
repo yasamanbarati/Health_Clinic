@@ -47,7 +47,7 @@ class RegisterView(View):
 
 
 class LoginView(View):
-    
+
     def get(self, request):
         if request.user.is_authenticated:
             logout(request)
