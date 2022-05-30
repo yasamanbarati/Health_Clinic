@@ -2,25 +2,25 @@
     --bg-01: #ffa8b7;
     --bg-02: #7fc6da;
     --bg-03: #7fdac8;
-    --bg-04:  linear-gradient(to right , #ffa8b7 , #7fc6da);
+    --bg-04: linear-gradient(to right, #ffa8b7, #7fc6da);
     --bg-light: #fff;
-    --bg-dark: #000;
+    --bg-dark: #00434c;
 }
 body {
     direction: rtl;
     background: transparent;
 }
-.register_form{
+.register_form {
     height: 100vh;
 }
-.register_form_title{
+.register_form_title {
     font-weight: 800;
 }
 .logo {
     height: 90px;
     width: 190px;
 }
-.title{
+.title {
     color: var(--bg-dark);
 }
 .form-block {
@@ -98,7 +98,6 @@ body {
     transition: 0.5s;
 }
 
-
 .forget-link,
 .login-link,
 .register-link {
@@ -112,28 +111,26 @@ body {
     color: var(--bg-01);
     text-decoration: none;
 }
-.form-input input::placeholder{
+.form-input input::placeholder {
     font-weight: 400;
     color: rgb(225, 225, 225) !important;
 }
 .form-input label,
-.custom-control-label
-{
+.custom-control-label {
     color: var(--bg-dark);
     font-weight: 600 !important;
 }
 .register_form_submit:hover,
 .register_form_submit:not(:disabled):not(.disabled).active,
-.register_form_submit:not(:disabled):not(.disabled):active{
-    background: linear-gradient(to right , var(--bg-01) , var(--bg-02)) !important;
+.register_form_submit:not(:disabled):not(.disabled):active {
+    background: linear-gradient(to right, var(--bg-01), var(--bg-02)) !important;
 }
 .form-input p,
 .register_form_submit,
-.register_formLogin
-{
+.register_formLogin {
     font-weight: 400;
     color: var(--bg-dark);
-}   
+}
 .custom-control-label:before {
     pointer-events: none;
     user-select: none;
@@ -142,5 +139,76 @@ body {
     right: 0;
 }
 .custom-control-label:after {
-    right: 0px; !important
+    right: 0px !important;
+}
+.register_form_google img {
+    width: 45px;
+}
+.register_form_google {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    padding: 15px;
+    height: 60px;
+    border-radius: 10px;
+    box-shadow: 0 1px 5px 0 rgb(0 0 0 / 20%);
+    -moz-box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: 0 1px 5px 0 rgb(0 0 0 / 20%);
+    -o-box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+    -ms-box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+    position: relative;
+    z-index: 1;
+    background-color: var(--bg-light);
+    transition: all 0.3s ease 0s;
+}
+.register_form_google p {
+    font-weight: 800;
+    line-height: 1.2;
+    color: var(--bg-dark);
+}
+.register_form_google-box {
+    position: relative;
+    transition: 3s;
+    height: 100%;
+}
+.register_form_google-box::after {
+    background: rgba(125, 183, 199, 0.2);
+    bottom: 50%;
+    content: "";
+    right: 0;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    opacity: 1;
+    pointer-events: none;
+    z-index: 2;
+}
+.register_form_google-box::before {
+    background: rgba(125, 183, 199, 0.2);
+    bottom: 0;
+    content: "";
+    right: 50%;
+    position: absolute;
+    left: 51%;
+    top: 0;
+    opacity: 1;
+    pointer-events: none;
+    z-index: 2;
+}
+.register_form_google-box:hover::before {
+    right: 0;
+    left: 0;
+    opacity: 0;
+    transition: all 0.9s linear;
+}
+.register_form_google-box:hover::after {
+    top: 0;
+    bottom: 0;
+    opacity: 0;
+    transition: all 0.9s linear;
 }
