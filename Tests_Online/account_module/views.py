@@ -16,6 +16,9 @@ from django.contrib.auth.hashers import make_password
 class RegisterView(View):
 
     def get(self, request):
+        if request.user.is_authenticated:
+            logout(request)
+
         register_form = RegisterForms()
         return render(request, 'login_page.html', {'register_form': register_form})
 
@@ -44,7 +47,11 @@ class RegisterView(View):
 
 
 class LoginView(View):
+
     def get(self, request):
+        if request.user.is_authenticated:
+            logout(request)
+
         login_form = LoginForms()
         context = {
             'loginForm': login_form
