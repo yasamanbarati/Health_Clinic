@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'account_module',
     'BMI_module',
     'Home_module',
-    'our_services_module',
+    # 'our_services_module',
     'django_render_partial',
 <<<<<<< HEAD
     'sorl.thumbnail',

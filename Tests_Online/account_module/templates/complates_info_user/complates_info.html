@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/material-dashboard.min.css"><link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/font/newFont.css">
+    <link rel="stylesheet" href="/static/css/test_online.css">
+    <title>Document</title>
+</head>
+
+<body>
+<section class="container">
+    <section class="test row justify-content-center align-items-center border-radius-2xl">
+        <section class="test-online col-lg-9 bg-white py-4 px-lg-5 border-radius-section position-relative">
+
+            <form action="{% url 'Complete_info' %}" method="post" id="wizard" role="application" class="wizard mx-5 my-4">
+                <section class="steps">
+                    <ul role="tablist" class=" d-flex justify-content-center mb-3 ">
+                        <li role="tab" aria-disabled="false" class="first current" aria-selected="true"><a
+                                id="wizard-t-0" href="Test_step1.html" aria-controls="stepOne"><span
+                                class="current-info audible">current
+                                        step: </span><span class="number">1.</span> <img
+                                src="/static/img/profile-1.1s-200px.png" alt="test_step_img" class="test_step_img">
+                            <span class="step-order text-xxs d-block text-center text-black-50 mt-3">مرحله
+                                        اول</span></a><img src="/static/img/step-arrow.png" alt="" class="step-arrow">
+                        </li>
+                        <li role="tab" aria-disabled="false"><a id="wizard-t-1" href="Test_step2.html"
+                                                                aria-controls="wizard-p-1"><span class="number">2.</span> <img
+                                src="/static/img/exam-1.1s-200px.png" alt="test_step_img" class="test_step_img"><span
+                                class="step-order text-xxs d-block text-center text-black-50 mt-3">مرحله
+                                        دوم</span></a><img src="/static/img/step-arrow.png" alt="" class="step-arrow">
+                        </li>
+                        <li role="tab" aria-disabled="false" class="last"><a id="wizard-t-3" href="Test_step3.html"
+                                                                             aria-controls="wizard-p-3"><span class="number">3.</span> <img
+                                src="/static/img/hospital-1.1s-200px.png" alt="test_step_img" class="test_step_img"><span
+                                class="step-order text-xxs d-block text-center text-black-50 mt-3">مرحله
+                                        سوم</span></a></li>
+                    </ul>
+                </section>
+                <section class="content">
+                    <!-- SECTION 1 -->
+                    {% csrf_token %}
+                    <section id="stepOne" role="tabpanel" class="body current" aria-hidden="false">
+                        <h3 class="text-2xl text-center text-dark mb-3">جزئیات اساسی</h3>
+                        <section class="form-row d-flex mb-3">
+                            <section class="form-holder w-50 me-4 text-end position-relative  d-flex flex-column justify-content-center align-items-end">
+                                <label for="" class="text-sm text-dark"> : {{ form.first_name.lable }}</label>
+                                <i class="material-icons position-absolute">person</i>
+                                {{ form.first_name }}
+                            </section>
+                            <section class="form-holder w-50 me-4 text-end position-relative  d-flex flex-column justify-content-center align-items-end">
+                                <label for="" class="text-sm text-dark"> : {{ form.last_name.lable }}</label>
+                                <i class="material-icons position-absolute">person</i>
+                                {{ form.last_name }}
+                            </section>
+                        </section>
+                        <section class="form-row d-flex mb-3">
+                            <section class="form-holder w-50 me-4 text-end position-relative  d-flex flex-column justify-content-center align-items-end">
+                                <label for="" class="text-sm text-dark"> : {{ form.email.lable }}</label>
+                                <i class="material-icons position-absolute">email</i>
+                                {{ form.email }}
+                            </section>
+                        </section>
+                    </section>
+                </section>
+                <section class="actions mt-3">
+                    <ul role="menu" aria-label="Pagination" class="d-flex justify-content-between">
+                        <li class="disabled border-radius-section d-flex justify-content-center align-items-center" aria-disabled="true"><a href="{% url 'home_page' %}" role="menuitem" class="border-0 d-inline-flex align-items-center text-white cursor-pointer justify-content-center text-sm w-100 h-100">بازگشت</a>
+                        </li>
+                        <li aria-hidden="false" aria-disabled="false" class="border-radius-section d-flex justify-content-center align-items-center"><a href="{% url 'calculate_bmi' %}"
+                                                                                                                                                        role="menuitem" class="border-0 d-inline-flex align-items-center text-white cursor-pointer justify-content-center text-sm w-100 h-100">ادامه</a></li>
+                        <input type="submit">
+                    </ul>
+                </section>
+            </form>
+        </section>
+    </section>
+</section>
+</body>
+
+</html>
