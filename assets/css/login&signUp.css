@@ -6,7 +6,8 @@
     --bg-light: #fff;
     --bg-dark: #00434c;
 }
-body {
+body {    
+    font-family: 'Vazir';
     direction: rtl;
     background: transparent;
 }
