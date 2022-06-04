@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="assets/css/material-dashboard.min.css">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="assets/mobiscroll.javascript.min.css" rel="stylesheet" />
+    <script src="assets/mobiscroll.javascript.min.js"></script>
     <link rel="stylesheet" href="assets/font/newFont.css">
     <link rel="stylesheet" href="assets/css/test_online.css">
     <title>Document</title>
@@ -85,6 +87,42 @@
                                     </section>
                                     <!--  end -->
                                 </section>
+                                <section id="myDropdown1" class="dropdown form-holder w-50 me-4 text-end">
+                                    <label for="" class="text-sm text-dark">: زیر مجموعه بیماری </label>
+                                    <input type="text"
+                                        class="btn btn-white dropdown-toggle form-control text-sm text-end w-100 bg-transparent py-0 px-4 text-dark position-relative"
+                                        type="button" id="dis_input1" data-bs-toggle="dropdown" aria-expanded="false"
+                                        placeholder="بیماری خود را جستوجو کنید" onkeyup="filterFunc()"
+                                        autocomplete="off" onkeypress="showDownBtn1()">
+
+                                    <button class="filter_close1" onclick="createDic1()">
+                                        <i class="material-icons">done</i>
+                                    </button>
+
+                                    <ul class="dropdown-menu" aria-labelledby="dis_input1">
+                                        <li><a class="dropdown-item text-sm text-dark text-end" href="#"
+                                                onclick="dropdwnValue1(this)">بیماری 0</a>
+                                        </li>
+                                        <li><a class="dropdown-item text-sm text-dark text-end" href="#"
+                                                onclick="dropdwnValue1(this)">بیماری 01</a>
+                                        </li>
+                                        <li><a class="dropdown-item text-sm text-dark text-end" href="#"
+                                                onclick="dropdwnValue1(this)">بیماری 02</a>
+                                        </li>
+                                    </ul>
+                                    <!--  -->
+                                    <section id="dis_box1"
+                                        class="d-flex justify-content-end align-items-center flex-wrap">
+                                        <!-- این باکس یا استفاده از جاوااسکریپت ایجاد شده -->
+                                        <!-- <span class="dis_box_span">
+                                            <button class="dis_box_btn">
+                                                <i class="material-icons">close</i>
+                                            </button>
+                                            بیماری 01
+                                        </span> -->
+                                    </section>
+                                    <!--  end -->
+                                </section>
                             </section>
                         </section>
                     </section>
@@ -107,6 +145,8 @@
     </section>
 </body>
 <script src="assets/js/bootstrap.bundle.min.js"></script>
-<script src="assets/js/filter.js"></script>
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/MultiSelect.js"></script>
+<script src="assets/js/MultiSelect_S.js"></script>
 
 </html>
