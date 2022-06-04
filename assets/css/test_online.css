@@ -219,7 +219,8 @@ input[type="checkbox"] + label:before {
 .dis_box_btn i{
     font-size: 1.3rem;
 }
-.filter_close{
+.filter_close,
+.filter_close1{
     left: 10px;
     top: 38px;
     position: absolute;
@@ -237,7 +238,8 @@ input[type="checkbox"] + label:before {
     right: 8px;
     top: 38px;
 }
-.filter_close{
+.filter_close,
+.filter_close1{
     display: none;
 }
 .showIcon{
