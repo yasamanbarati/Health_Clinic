@@ -1,12 +1,191 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!-- Vendor CSS Files -->
+    <link rel="stylesheet" href="assets/css/material-dashboard.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="assets/font/newFont.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/TestResult.css">
 </head>
+
 <body>
-    
+    <section class="position-relative head mb-4">
+        <header class="bg-transparent position-relative z-index-3">
+            <section class="container">
+                <section class="row justify-content-between align-items-center mt-3">
+                    <section class="col-lg-2">
+                        <a class="z-index-1" href="Home.html"><img class="w-100 h-100"
+                                src="assets/img/Logo1-removebg-preview.png" alt="logo"></a>
+                    </section>
+                    <section class="col-2 d-flex justify-content-end ">
+                        <button class="btn text-center nav-menu">
+                            <span class="material-icons">
+                                person
+                            </span>
+                        </button>
+                    </section>
+                    <section class="navbar_side_menu position-absolute top-0">
+                        <section class="d-flex justify-content-end w-100 h-100">
+                            <section class="navbar_menu px-3 pt-3 border-radius-2xl shadow-success">
+                                <section
+                                    class="navbar-responsive-header row justify-content-between align-items-start mx-auto ">
+                                    <section
+                                        class="col-9 d-flex flex-column justify-content-center align-items-center mt-3 px-5"
+                                        style="height: 75px;">
+                                        <img class="w-100 h-100"
+                                            src="assets/img/download-icon-person-1324760545186718018_512.png"
+                                            alt="person icon">
+                                        <p class="person_name text-lg text-center text-nowrap">
+                                            یاسمن براتی
+                                        </p>
+                                    </section>
+                                    <section class="col-3 row justify-content-between align-items-start">
+                                        <button
+                                            class="btn p-2 d-flex justify-content-center align-items-center menu_control_btn mb-0"
+                                            aria-label="Close">
+                                            <i class="material-icons">close</i>
+                                        </button>
+                                    </section>
+                                </section>
+                                <section class="navbar-responsive-body mt-5 mx-auto ">
+                                    <section class="navbar-responsive-item position-relative pb-3">
+                                        <a href="Update_information.html"
+                                            class=" text-right text-lg d-flex align-items-center mb-0">
+                                            <i
+                                                class="material-icons  bg-gradient-faded-success-vertical text-neutral shadow-lg rounded-circle z-index-1 p-2 mx-3 ">info</i>
+                                            مشخصات
+                                        </a>
+                                    </section>
+                                    <section class="navbar-responsive-item position-relative py-3">
+                                        <a href="" class=" text-right text-lg d-flex align-items-center mb-0 ">
+                                            <i
+                                                class="material-icons  bg-gradient-faded-success-vertical text-neutral shadow-lg rounded-circle z-index-1 p-2 mx-3">calendar_month</i>
+                                            تقویم
+                                        </a>
+                                    </section>
+                                </section>
+                            </section>
+                        </section>
+                    </section>
+                </section>
+            </section>
+        </header>
+    </section>
+    <section class="mt-5 mb-5">
+        <section class="container">
+            <section class="test-box-title text-center">
+                <h2 class="d-flex text-2xl position-relative">
+                    <h4 class="d-inline-block text-lg"> مشخصات فردی</h4>
+                    > اطلاعات عضویت
+                </h2>
+            </section>
+            <section class="box-information d-flex justify-content-center">
+                <section class="box-info w-70">
+                    <section class="box-info-inner mt-3">
+                        <section class="box-info-value mt-3">
+                            <h4 class="text-lg text-center">تغییر&nbsp;تصویر کاربر</h4>
+                            <section class="item p-3 pe-0 d-flex justify-content-start align-items-end">
+                                <section class="personal-image cci-image-thumbnail-show">
+                                    <img class="ui rounded image w-100 h-100" src="assets/img/team/team-4.jpg">
+                                </section>
+                                <section class="personal-image-file">
+                                    <input type="file" name="personImg" id="personImg" placeholder="انتخاب تصویر">
+
+                                </section>
+                            </section>
+                            <section class="item p-3">
+                                <form action="" method="post" id="formUpdate">
+                                    <section class="box-info-value">
+                                        <h3 class="text-2xl text-center text-right mb-3">جزئیات اساسی</h3>
+                                    </section>
+                                    <section class="form-row d-flex mb-3">
+                                        <section
+                                            class="form-holder w-50 me-0 text-end position-relative  d-flex flex-column justify-content-center ">
+                                            <label for="" class="text-sm text-right"> نام :</label>
+                                            <i class="material-icons position-absolute">person</i>
+                                            <input type="text"
+                                                class="form-control text-sm text-end w-100 bg-transparent py-0 ps-4 pe-5 text-right"
+                                                placeholder="نام خود را وارد کنید" readonly value="یاسمن">
+                                            <button class="Edit position-absolute bg-transparent border-0 text-sm">ویرایش</button>
+                                        </section>
+                                        <section
+                                            class="form-holder w-50 me-4 text-end position-relative  d-flex flex-column justify-content-center ">
+                                            <label for="" class="text-sm text-right">نام خانوادگی :</label>
+                                            <i class="material-icons position-absolute">person</i>
+                                            <input type="text"
+                                                class="form-control text-sm text-end w-100 bg-transparent py-0 ps-4 pe-5 text-right"
+                                                placeholder="نام خانوادگی خود را وارد کنید" readonly
+                                                value="براتی">
+                                            <button class="Edit position-absolute bg-transparent border-0 text-sm">ویرایش</button>
+                                        </section>
+                                    </section>
+                                    <section class="form-row d-flex mb-3">
+                                        <section
+                                            class="form-holder w-50 me-0 text-end position-relative  d-flex flex-column justify-content-center ">
+                                            <label for="" class="text-sm text-right"> ایمیل :</label>
+                                            <i class="material-icons position-absolute">email</i>
+                                            <input type="text"
+                                                class="form-control text-sm text-end w-100 bg-transparent py-0 ps-4 pe-5 text-right"
+                                                placeholder="ایمیل خود را وارد کنید" readonly
+                                                value="yasamanbarati81@gmail.com">
+                                            <button class="Edit position-absolute bg-transparent border-0 text-sm">ویرایش</button>
+                                        </section>
+                                        <section
+                                            class="form-holder w-50 me-4 text-end position-relative  d-flex flex-column justify-content-center ">
+                                            <label for="" class="text-sm text-right"> شماره تماس :</label>
+                                            <i class="material-icons position-absolute">phone</i>
+                                            <input type="text"
+                                                class="form-control text-sm text-end w-100 bg-transparent py-0 ps-4 pe-5 text-right"
+                                                placeholder="شماره تماس خود را وارد کنید" readonly value="09876543210">
+                                            <button class="Edit position-absolute bg-transparent border-0 text-sm">ویرایش</button>
+                                        </section>
+                                    </section>
+                                    <section class="form-row d-flex mt-4 justify-content-end align-items-center">
+                                        <section
+                                            class="form-holder w-50 me-0 text-end position-relative d-flex flex-column justify-content-center ">
+                                            <label for="" class="text-sm  text-right"> سن : </label>
+                                            <i class="material-icons position-absolute">memory</i>
+                                            <input type="text"
+                                                class="form-control text-sm text-end w-100 bg-transparent  py-0 ps-4 pe-5 text-right"
+                                                placeholder="سن را وارد کنید" readonly value="20">
+                                            <button class="Edit position-absolute bg-transparent border-0 text-sm">ویرایش</button>
+                                        </section>
+                                        <section
+                                            class="form-holder w-50 me-4 text-end d-flex justify-content-end flex-column">
+                                            <section>
+                                                <label for="" class="text-sm  text-right"> جنسیت :</label>
+                                            </section>
+                                            <section class="d-flex align-items-baseline">
+                                                <input type="radio" id="woman" name="Gender" value="Woman">
+                                                <label for="woman" class="mx-3 text-sm mb-0">زن</label>
+                                                <input type="radio" id="man" name="Gender" value="Man">
+                                                <label for="man" class="mx-3 text-sm mb-0">مرد</label>
+                                            </section>
+                                        </section>
+                                    </section>
+                                    <section class="subBtn mt-5 mx-auto">
+                                        <button type="submit"
+                                            class="border-0  border-radius-section d-flex align-items-center text-white cursor-pointer justify-content-center text-sm w-100 h-100">زخیره</button>
+                                    </section>
+                            </section>
+
+                            </form>
+                        </section>
+                    </section>
+                </section>
+            </section>
+        </section>
+    </section>
+    </section>
 </body>
+<script src="./assets/js/jquery.min.js"></script>
+<script src="assets/js/menu.js"></script>
+
 </html>
