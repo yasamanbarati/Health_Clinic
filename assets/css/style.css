@@ -19,7 +19,9 @@ h5,
 h6,
 p,
 a,
-label {
+label,
+button,
+i {
   color: var(--bg-dark);
 }
 a {

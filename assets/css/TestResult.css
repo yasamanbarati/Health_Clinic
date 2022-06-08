@@ -1,11 +1,11 @@
-.material-icons.bg-gradient-faded-success-vertical{
-    color: var(--bg-03);
+.material-icons.bg-gradient-faded-success-vertical {
+    color: var(--bg-02);
     background: transparent;
 }
-.test-box-title h2{
+.test-box-title h2 {
     font-weight: 800;
 }
-.test-box-title h4{
+.test-box-title h4 {
     font-weight: 700;
 }
 .test-box-title h2::before {
@@ -15,10 +15,10 @@
     left: 40%;
 }
 .box-info-value h4,
-.box-info-value h3{
+.box-info-value h3 {
     font-weight: 600;
 }
-.navbar_menu{
+.navbar_menu {
     background-color: rgb(250, 250, 250);
 }
 .personal-image {
@@ -26,11 +26,12 @@
     height: 150px;
     margin-left: 20px;
 }
-.personal-image-file label, .personal-image-file input {
+.personal-image-file label,
+.personal-image-file input {
     font-weight: 600;
     color: var(--bg-dark);
 }
-.form-holder label{
+.form-holder label {
     font-weight: 500;
 }
 .form-row .form-group {
@@ -55,15 +56,15 @@ label {
 }
 .form-control:focus,
 .form-control:valid {
-    border: 1px solid var(--bg-03);
+    border: 1px solid var(--bg-02);
 }
 .form-control:focus {
-    border: 1.5px solid var(--bg-03);
+    border: 1.5px solid var(--bg-02);
     outline: 0;
     box-shadow: 0px 2px 5px 0px #b2e9de;
 }
 .actions li {
-    background: var(--bg-03);
+    background: var(--bg-02);
     width: 150px;
     height: 55px;
     transition: 0.7s ease-in-out;
@@ -90,11 +91,11 @@ input[type="checkbox"] + label:before {
     content: " ";
     display: inline-block;
     vertical-align: baseline;
-    border: 1px solid var(--bg-03);
+    border: 1px solid var(--bg-02);
 }
 input[type="radio"]:checked + label:before,
 input[type="checkbox"]:checked + label:before {
-    background: var(--bg-03);
+    background: var(--bg-02);
 }
 
 /* CUSTOM RADIO AND CHECKBOX STYLES */
@@ -108,19 +109,115 @@ input[type="checkbox"] + label:before {
     right: 8px;
     top: 38px;
 }
-.subBtn{
+.subBtn {
     width: 150px;
     height: 55px;
 }
-.subBtn button{
+.subBtn button {
     text-transform: uppercase;
     letter-spacing: 1px;
     font-weight: 600;
     background: var(--bg-01);
 }
-.Edit{
+.Edit {
     left: 0px;
     top: 38px;
     font-weight: 400;
     border-right: 1px var(--bg-dark) solid !important;
+}
+#line-example-3 {
+    direction: ltr;
+    height: 200px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+#line-example-3 td .data {
+    transition-duration: 0.6s;
+    transform: scale(0);
+}
+#line-example-3 td:hover .data {
+    transform: scale(1);
+    padding-bottom: 1%;
+    padding-right: 40%;
+    white-space: nowrap;
+    color: var(--bg-dark);
+}
+#line-example-3 td {
+    transition-duration: 0.3s;
+    opacity: 0.5;
+    color: var(--bg-01);
+}
+#line-example-3 td:hover {
+    opacity: 1;
+}
+#line-example-3 tbody {
+    border-left: 3px solid var(--bg-dark);
+    border-bottom: 3px solid var(--bg-dark);
+}
+.services-title::after, .services-title::before,
+.services-title::after, .services-title::after,
+.program .card-body button {
+    background: var(--bg-02);
+}
+.program .card-body h2{
+    font-weight: 600;
+}
+.program .card-body p{
+    font-weight: 400;
+    display: -webkit-box;
+    -webkit-line-clamp:2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.test-box-title{
+    border-bottom: none;
+}
+.test-box-title h2::before {
+    height: 3px;
+    top: 26px;
+}
+.program .video_btn{
+    border-color: var(--bg-01)!important;
+    font-weight: 600;
+}
+.program .card-header a{
+    height: 200px;
+}
+.successCard{
+    transition: 0.8s ease;
+}
+.successCard:hover{
+    box-shadow: 0 4px 4px 6px rgba(44, 44, 44, 0.2), 0 2px 4px -1px rgba(61, 61, 61, 0.36);
+}
+.program .card-body .card-title,
+.program .card-body .col-2 span{
+    font-weight: 800;
+}
+.program .card-body .card-text{
+    font-weight: 400;
+    color: var(--bg-01);
+}
+.program .card-body .col-2{
+    background-color: var(--bg-01);
+    border-radius: 30% 0%;
+}
+h1.infoText,
+.story h2{
+    font-weight: 800;}
+h3.infoText{
+    font-weight: 600;}
+h5.infoText{
+    font-weight: 600;}
+h6.infoText{
+    font-weight: 400;
+    color: var(--bg-01);
+}
+.story input{
+    height: 200px;
+    border: 3px solid var(--bg-02);
+    box-shadow: 0 0 2px 1px #dbdbdb;
+}
+.story button{
+    background-color: var(--bg-02);
 }
