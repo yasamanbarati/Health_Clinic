@@ -41,12 +41,12 @@ INSTALLED_APPS = [
     'Home_module',
     # 'our_services_module',
     'django_render_partial',
-<<<<<<< HEAD
-    'sorl.thumbnail',
-=======
-    'team_info_module',
+# <<<<<<< HEAD
+#     'sorl.thumbnail',
+# =======
+#     'team_info_module',
     'social_django',
->>>>>>> fdc710e870f084bec1259f6636b1514fa750b4bb
+# >>>>>>> fdc710e870f084bec1259f6636b1514fa750b4bb
 ]
 
 MIDDLEWARE = [
