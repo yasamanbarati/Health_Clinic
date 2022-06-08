@@ -7,11 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/material-dashboard.min.css">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link href="assets/mobiscroll.javascript.min.css" rel="stylesheet" />
     <script src="assets/mobiscroll.javascript.min.js"></script>
     <link rel="stylesheet" href="assets/font/newFont.css">
     <link rel="stylesheet" href="assets/css/test_online.css">
+    <script src="https://unpkg.com/@yaireo/tagify"></script>
+    <script src="https://unpkg.com/@yaireo/tagify@3.1.0/dist/tagify.polyfills.min.js"></script>
+    <link href="https://unpkg.com/@yaireo/tagify/dist/tagify.css" rel="stylesheet" type="text/css" />
+
     <title>Document</title>
 </head>
 
@@ -51,77 +55,35 @@
                         <section id="stepTwo" role="tabpanel" class="body current" aria-hidden="false">
                             <h3 class="text-2xl text-center text-dark mb-3">بیماری</h3>
                             <section class="form-row d-flex mb-3">
-                                <section id="myDropdown" class="dropdown form-holder w-50 me-4 text-end">
-                                    <label for="" class="text-sm text-dark">: زیر مجموعه بیماری </label>
-                                    <input type="text"
-                                        class="btn btn-white dropdown-toggle form-control text-sm text-end w-100 bg-transparent py-0 px-4 text-dark position-relative"
-                                        type="button" id="dis_input" data-bs-toggle="dropdown" aria-expanded="false"
-                                        placeholder="بیماری خود را جستوجو کنید" onkeyup="filterFunction()"
-                                        autocomplete="off" onkeypress="showDownBtn()">
-
-                                    <button class="filter_close" onclick="createDic()">
-                                        <i class="material-icons">done</i>
-                                    </button>
-
-                                    <ul class="dropdown-menu" aria-labelledby="dis_input">
-                                        <li><a class="dropdown-item text-sm text-dark text-end" href="#"
-                                                onclick="dropdwnValue(this)">بیماری 0</a>
-                                        </li>
-                                        <li><a class="dropdown-item text-sm text-dark text-end" href="#"
-                                                onclick="dropdwnValue(this)">بیماری 01</a>
-                                        </li>
-                                        <li><a class="dropdown-item text-sm text-dark text-end" href="#"
-                                                onclick="dropdwnValue(this)">بیماری 02</a>
-                                        </li>
-                                    </ul>
-                                    <!--  -->
-                                    <section id="dis_box"
-                                        class="d-flex justify-content-end align-items-center flex-wrap">
-                                        <!-- این باکس یا استفاده از جاوااسکریپت ایجاد شده -->
-                                        <!-- <span class="dis_box_span">
-                                            <button class="dis_box_btn">
-                                                <i class="material-icons">close</i>
-                                            </button>
-                                            بیماری 01
-                                        </span> -->
-                                    </section>
-                                    <!--  end -->
+                                <section class="form-holder w-50 me-4 text-end">
+                                    <label for="" class="text-md text-dark">: شاخه اصلی بیماری </label>
+                                    <input name='tags-outside1' class='tagify--outside'>
+                                    <script>
+                                        var input = document.querySelector('input[name=tags-outside1]')
+                                        // init Tagify script on the above inputs
+                                        var tagify = new Tagify(input, {
+                                        whitelist: ["بیماری 01", "بیماری 02", "بیماری 03", "بیماری 04"],
+                                            dropdown: {
+                                                position: "input",
+                                                enabled: 0 // always opens dropdown when input gets focus
+                                            }
+                                        })
+                                    </script>
                                 </section>
-                                <section id="myDropdown1" class="dropdown form-holder w-50 me-4 text-end">
-                                    <label for="" class="text-sm text-dark">: زیر مجموعه بیماری </label>
-                                    <input type="text"
-                                        class="btn btn-white dropdown-toggle form-control text-sm text-end w-100 bg-transparent py-0 px-4 text-dark position-relative"
-                                        type="button" id="dis_input1" data-bs-toggle="dropdown" aria-expanded="false"
-                                        placeholder="بیماری خود را جستوجو کنید" onkeyup="filterFunc()"
-                                        autocomplete="off" onkeypress="showDownBtn1()">
-
-                                    <button class="filter_close1" onclick="createDic1()">
-                                        <i class="material-icons">done</i>
-                                    </button>
-
-                                    <ul class="dropdown-menu" aria-labelledby="dis_input1">
-                                        <li><a class="dropdown-item text-sm text-dark text-end" href="#"
-                                                onclick="dropdwnValue1(this)">بیماری 0</a>
-                                        </li>
-                                        <li><a class="dropdown-item text-sm text-dark text-end" href="#"
-                                                onclick="dropdwnValue1(this)">بیماری 01</a>
-                                        </li>
-                                        <li><a class="dropdown-item text-sm text-dark text-end" href="#"
-                                                onclick="dropdwnValue1(this)">بیماری 02</a>
-                                        </li>
-                                    </ul>
-                                    <!--  -->
-                                    <section id="dis_box1"
-                                        class="d-flex justify-content-end align-items-center flex-wrap">
-                                        <!-- این باکس یا استفاده از جاوااسکریپت ایجاد شده -->
-                                        <!-- <span class="dis_box_span">
-                                            <button class="dis_box_btn">
-                                                <i class="material-icons">close</i>
-                                            </button>
-                                            بیماری 01
-                                        </span> -->
-                                    </section>
-                                    <!--  end -->
+                                <section class="form-holder w-50 me-0 text-end">
+                                    <label for="" class="text-md text-dark">: زیر مجموعه بیماری </label>
+                                    <input name='tags-outside' class='tagify--outside'>
+                                    <script>
+                                        var input = document.querySelector('input[name=tags-outside]')
+                                        // init Tagify script on the above inputs
+                                        var tagify = new Tagify(input, {
+                                        whitelist: ["بیماری 01", "بیماری 02", "بیماری 03", "بیماری 04"],
+                                            dropdown: {
+                                                position: "input",
+                                                enabled: 0 // always opens dropdown when input gets focus
+                                            }
+                                        })
+                                    </script>
                                 </section>
                             </section>
                         </section>
@@ -135,7 +97,8 @@
                             <li aria-hidden="false" aria-disabled="false"
                                 class="border-radius-section d-flex justify-content-center align-items-center"><a
                                     href="Test_result.html" role="menuitem"
-                                    class="border-0 d-inline-flex align-items-center text-white cursor-pointer justify-content-center text-sm w-100 h-100">مشاهده نتیحه</a>
+                                    class="border-0 d-inline-flex align-items-center text-white cursor-pointer justify-content-center text-sm w-100 h-100">مشاهده
+                                    نتیحه</a>
                             </li>
                         </ul>
                     </section>
