@@ -48,23 +48,28 @@
                         <h3 class="text-2xl text-center text-dark mb-3">جزئیات اساسی</h3>
                         <section class="form-row d-flex mb-3">
                             <section class="form-holder w-50 me-4 text-end position-relative  d-flex flex-column justify-content-center align-items-end">
-                                <label for="" class="text-sm text-dark"> : {{ form.first_name.lable }}</label>
+                                <label for="" class="text-sm text-dark"> : نام</label>
                                 <i class="material-icons position-absolute">person</i>
                                 {{ form.first_name }}
                             </section>
                             <section class="form-holder w-50 me-4 text-end position-relative  d-flex flex-column justify-content-center align-items-end">
-                                <label for="" class="text-sm text-dark"> : {{ form.last_name.lable }}</label>
+                                <label for="" class="text-sm text-dark"> : نام خانوادگی</label>
                                 <i class="material-icons position-absolute">person</i>
                                 {{ form.last_name }}
                             </section>
                         </section>
-                        <section class="form-row d-flex mb-3">
+                        <section class="form-holder w-50 me-0 text-end position-relative  d-flex flex-column justify-content-center align-items-end">
+                            <label for="" class="text-sm text-dark"> : ایمیل</label>
+                            <i class="material-icons position-absolute">email</i>
+                            {{ form.email }}
+                        </section>
+                        {% comment %}                        <section class="form-row d-flex mb-3">
                             <section class="form-holder w-50 me-4 text-end position-relative  d-flex flex-column justify-content-center align-items-end">
-                                <label for="" class="text-sm text-dark"> : {{ form.email.lable }}</label>
+                                <label for="" class="text-sm text-dark"> : ایمیل</label>
                                 <i class="material-icons position-absolute">email</i>
                                 {{ form.email }}
                             </section>
-                        </section>
+                        </section>{% endcomment %}
                     </section>
                 </section>
                 <section class="actions mt-3">
@@ -73,7 +78,8 @@
                         </li>
                         <li aria-hidden="false" aria-disabled="false" class="border-radius-section d-flex justify-content-center align-items-center"><a href="{% url 'calculate_bmi' %}"
                                                                                                                                                         role="menuitem" class="border-0 d-inline-flex align-items-center text-white cursor-pointer justify-content-center text-sm w-100 h-100">ادامه</a></li>
-                        <input type="submit">
+                        <input type="submit" aria-hidden="false" aria-disabled="false" class="border-radius-section d-flex justify-content-center align-items-center">
+
                     </ul>
                 </section>
             </form>

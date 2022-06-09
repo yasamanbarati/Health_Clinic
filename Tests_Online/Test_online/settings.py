@@ -47,6 +47,7 @@ INSTALLED_APPS = [
 #     'team_info_module',
     'social_django',
 # >>>>>>> fdc710e870f084bec1259f6636b1514fa750b4bb
+#     'social_django',
 ]
 
 MIDDLEWARE = [

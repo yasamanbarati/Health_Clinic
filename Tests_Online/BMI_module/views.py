@@ -67,12 +67,11 @@ def contactFormView(request):
         if formOn.is_valid():
             formOn.save()
             issend = True
-
             # محاسبه bmi
-            weight_m = formOn.cleaned_data.get('weight')
-            height_kg = formOn.cleaned_data.get('height')
-            height_kg = pow(height_kg, 2)
-            bmi = weight_m / height_kg
+            height_m = formOn.cleaned_data.get('height')
+            weight_kg = formOn.cleaned_data.get('weight')
+            height_m = pow(height_m, 2)
+            bmi = weight_kg / height_m
             user.update(BMI_value=bmi)
 
             # شرایط محدوده سنی

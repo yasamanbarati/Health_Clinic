@@ -23,6 +23,9 @@ urlpatterns = [
     path('account/', include('account_module.urls')),
     path('BMI/', include('BMI_module.urls')),
     # path('', include('our_services_module.urls')),
+    path('', include('social_django.urls', namespace='social')),
+    #path('', include('our_services_module.urls')),
+
 ]
 
 

@@ -9,38 +9,167 @@
     <title>{% block title %}{% endblock %}</title>
     {% include 'shared/header_refrense.html' %}
     <link>{% block links %}{% endblock %}</link>
-
 </head>
 
 <body>
 {% render_partial  'Home_module.views.site_header_component'%}
 {% block content %}  {% endblock %}
-{% comment %}<section class="py-5 test-box d-none">
-    <section class="container">
-        <section class="row align-items-center justify-content-between">
-            <section class="col-4">
-                <section class="test-box-info">
-                    <h2 class="mb-0 position-relative">تست آنلاین</h2>
+
+    <section class="main top-0 position-absolute z-index-0">
+        <section class="container h-100">
+            <section class="owl-carousel main-slider h-100 mt-5">
+                <section class="row justify-content-evenly align-items-center pt-5">
+                    <section class="col-lg-4 pt-5 pt-lg-0  d-flex align-items-center">
+                        <section>
+                            <h2 class="text-4xl text-dark">لورم ایپسوم متن ساختگی </h2>
+                            <p class="text-md text-dark">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و
+                                با استفاده از طراحان
+                                گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است
+                            </p>
+                        </section>
+                    </section>
+                    <section class="col-lg-4 main-img">
+                        <img src="/static/img/image-3.webp" class="animated w-100 h-100" alt="">
+                    </section>
                 </section>
-                <section class="mt-4">
-                    <p class="mb-0 text-darker text-lg">
+                <section class="row justify-content-evenly align-items-center pt-5">
+                    <section class="col-lg-4 pt-5 pt-lg-0  d-flex align-items-center">
+                        <section>
+                            <h2 class="text-4xl text-dark">لورم ایپسوم متن ساختگی </h2>
+                            <p class="text-md text-dark">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و
+                                با استفاده از طراحان
+                                گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است
+                            </p>
+                        </section>
+                    </section>
+                    <section class="col-lg-4 main-img">
+                        <img src="/static/img/Exercise.webp" class="animated w-100 h-100" alt="">
+                    </section>
+                </section>
+                <section class="row justify-content-evenly align-items-center pt-5">
+                    <section class="col-lg-4 pt-5 pt-lg-0  d-flex align-items-center">
+                        <section>
+                            <h2 class="text-4xl text-dark">لورم ایپسوم متن ساختگی </h2>
+                            <p class="text-md text-dark">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و
+                                با استفاده از طراحان
+                                گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است
+                            </p>
+                        </section>
+                    </section>
+                    <section class="col-lg-4 main-img">
+                        <img src="/static/img/Nutrition.png" class="animated w-100 h-100" alt="">
+                    </section>
+                </section>
+            </section>
+        </section>
+        <svg class="main-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 24 150 28 " preserveAspectRatio="none">
+            <defs>
+                <path id="wave-path" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z">
+                </path>
+            </defs>
+            <g class="wave1">
+                <use xlink:href="#wave-path" x="50" y="3" fill="rgba(255,255,255, .1)">
+                </use>
+            </g>
+            <g class="wave2">
+                <use xlink:href="#wave-path" x="50" y="0" fill="rgba(255,255,255, .2)">
+                </use>
+            </g>
+            <g class="wave3">
+                <use xlink:href="#wave-path" x="50" y="9" fill="#fff">
+                </use>
+            </g>
+        </svg>
+    </section>
+</section>
+<section class="services-box position-relative my-5">
+    <section class="container">
+        <section class="services-title text-center pb-5 position-relative">
+            <h2 class="text-center text-4xl">خدمات ما</h2>
+        </section>
+        <section class="services-index row justify-content-between align-items-baseline pt-5">
+            <section class="col-md-3 position-relative">
+                <section class="services-step">
+                    <section class="stap-img mx-auto">
+                        <img src="/static/img/user-1.1s-200px.svg" alt="signUp svg"
+                            class="d-flex justify-content-center align-items-center w-100 h-100">
+                    </section>
+                    <section class="stap-text">
+                        <h3 class="d-flex justify-content-center align-items-center text-2xl mt-1">عضویت در سایت
+                        </h3>
+                        <p class="text-center text-md mt-2">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت
+                            چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و
+                            سطرآنچنان که لازم است</p>
+                    </section>
+                </section>
+            </section>
+            <section class="col-md-3 position-relative">
+                <section class="services-step">
+                    <section class="stap-img mx-auto">
+                        <img src="/static/img/exam-1.1s-200px.svg" alt="Started-Bitcoin"
+                            class="d-flex justify-content-center align-items-center w-100 h-100">
+                    </section>
+                    <section class="stap-text">
+                        <h3 class="d-flex justify-content-center align-items-center text-2xl mt-1">تست انلاین</h3>
+                        <p class="text-center text-md mt-2">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت
+                            چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و
+                            سطرآنچنان که لازم است</p>
+                    </section>
+                </section>
+            </section>
+            <section class="col-md-3 position-relative">
+                <section class="services-step">
+                    <section class="stap-img mx-auto">
+                        <img src="/static/img/text-1.1s-200px.svg" alt="Started-Bitcoin"
+                            class="d-flex justify-content-center align-items-center w-100 h-100">
+                    </section>
+                    <section class="stap-text">
+                        <h3 class="d-flex justify-content-center align-items-center text-2xl mt-1">دربافت برنامه
+                        </h3>
+                        <p class="text-center text-md mt-2">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت
+                            چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و
+                            سطرآنچنان که لازم است</p>
+                    </section>
+                </section>
+            </section>
+        </section>
+    </section>
+
+</section>
+<section class="test-box my-3">
+    <section class="container h-100">
+        <section class="row justify-content-between align-items-center h-100">
+            <section class="col-4 pt-5">
+                <section class="test-box-title">
+                    <h2 class="mb-2 text-4xl position-relative">تست آنلاین</h2>
+                </section>
+                <section class="mt-4 test-box-info">
+                    <p class="mb-0 text-darker text-md">
                         لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است
                         چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است
                     </p>
                 </section>
                 <section class="my-4">
-                    <a href="" class="btn btn-link text-lg mb-0 test-box-info-btn">شروع تست</a>
+                    <a href=""
+                        class="d-inline-flex align-items-center btn btn-link text-md mb-0 text-decoration-none px-3 py-2 test-box-info-btn">شروع
+                        تست
+                        <i class="material-icons mx-2 text-lg">
+                            keyboard_backspace
+                        </i>
+                    </a>
                 </section>
             </section>
-            <section class="test-box-imgBox col-5 text-center position-relative">
-                <section class="position-absolute test-box-img shadow-dark">
+            <section class="test-box-imgBox col-5 h-100 position-relative">
+                <section class="position-absolute test-box-img">
                     <img src="/static/img/medical-tests-for-term-insurance-policy-removebg-preview.png"
-                         alt="test-online" class="w-100 h-100">
+                        alt="test-online" class="w-100 h-100">
                 </section>
             </section>
         </section>
     </section>
-</section>{% endcomment %}
+</section>
+
 {% render_partial  'Home_module.views.site_footer_component'%}
 </body>
 {% include 'shared/footer_refrense.html' %}

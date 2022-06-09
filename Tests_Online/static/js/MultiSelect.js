@@ -2,13 +2,13 @@ const downBtn = document.querySelector(".filter_close");
 const inputText = document.getElementById("dis_input");
 const disBox = document.querySelector("#dis_box");
 const formBox = document.querySelector('#wizard');
-
 function filterFunction() {
     var input, filter, a, i;
     input = document.getElementById("dis_input");
     filter = input.value.toUpperCase();
     div = document.getElementById("myDropdown");
     a = div.getElementsByTagName("a");
+    console.log(a);
     for (i = 0; i < a.length; i++) {
         txtValue = a[i].textContent || a[i].innerText;
         if (txtValue.toUpperCase().indexOf(filter) > -1) {
@@ -36,9 +36,6 @@ function dropdwnValue(dropdwnValueT) {
 }
 function createDic() {
     const text = inputText.value;
-    if (!text) {
-        alert("بیماری ثبت نشد لطفا فیلد را پر کنید ")
-    }
 
     // create dic value
     let dicBox_span = document.createElement("span");
