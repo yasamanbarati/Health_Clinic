@@ -28,42 +28,42 @@
 <body>
 <section class="container">
 
-{% if form.height.errors %}
-<div class="container-fluid" style="width: 50%" >
-    <div class="row" >
-        <div class="col-md-10 col-md-offset-1" >
-            <div class="alert alert-warning alert-dismissible fade in text-center" role="alert" style="opacity: 100% !important;">
-                 {{ form.height.errors }}
+    {% if form.height.errors %}
+        <div class="container-fluid" style="width: 50%" >
+            <div class="row" >
+                <div class="col-md-10 col-md-offset-1" >
+                    <div class="alert alert-warning alert-dismissible fade in text-center" role="alert" style="opacity: 100% !important;">
+                        {{ form.height.errors }}
+                    </div>
+                </div>
             </div>
         </div>
-  </div>
-</div>
-{% endif %}
-{% if form.weight.errors %}
-<div class="container-fluid" style="width: 50%">
-    <div class="row" >
-        <div class="col-md-10 col-md-offset-1" >
-            <div class="alert alert-warning alert-dismissible fade in text-center" role="alert" style="opacity: 100% !important;">
-                 {{ form.weight.errors }}
+    {% endif %}
+    {% if form.weight.errors %}
+        <div class="container-fluid" style="width: 50%">
+            <div class="row" >
+                <div class="col-md-10 col-md-offset-1" >
+                    <div class="alert alert-warning alert-dismissible fade in text-center" role="alert" style="opacity: 100% !important;">
+                        {{ form.weight.errors }}
+                    </div>
+                </div>
             </div>
         </div>
-  </div>
-</div>
-{% endif %}
-{% if form.age.errors %}
-<div class="container-fluid" style="width: 50%" >
-    <div class="row" >
-        <div class="col-md-10 col-md-offset-1" >
-            <div class="alert alert-warning alert-dismissible fade in text-center" role="alert" style="opacity: 100% !important;">
-                 {{ form.age.errors }}
+    {% endif %}
+    {% if form.age.errors %}
+        <div class="container-fluid" style="width: 50%" >
+            <div class="row" >
+                <div class="col-md-10 col-md-offset-1" >
+                    <div class="alert alert-warning alert-dismissible fade in text-center" role="alert" style="opacity: 100% !important;">
+                        {{ form.age.errors }}
+                    </div>
+                </div>
             </div>
         </div>
-  </div>
-</div>
-{% endif %}
+    {% endif %}
     <section class="test row justify-content-center align-items-center border-radius-2xl position-relative">
         <section class="test-online col-lg-8 bg-white p-5 border-radius-section">
-            <form novalidate action="{% url 'calculate_bmi' %}" method="post" id="wizard" role="application" class="wizard mx-5 my-2">
+            <form id="GFG" novalidate action="{% url 'calculate_bmi' %}" method="post" id="wizard" role="application" class="wizard mx-5 my-2">
                 <section class="steps">
                     <ul role="tablist" class=" d-flex justify-content-center mb-3 ">
                         <li role="tab" aria-disabled="false" class="first current" aria-selected="true"><a
@@ -114,7 +114,7 @@
                                 </section>
                                 <section>
                                     {{ foo.errors }}
-{#                                {{ form.gender }}#}
+                                    {#                                {{ form.gender }}#}
                                     {% for foo in form.gender %}
                                         {{foo}}
                                     {% endfor %}
@@ -131,20 +131,24 @@
                 </section>
                 <section class="actions mt-3">
                     <ul role="menu" aria-label="Pagination" class="d-flex justify-content-between">
-                        <input type="submit">
                         <li class="disabled border-radius-section d-flex justify-content-center align-items-center"
                             aria-disabled="true"><a href="{% url 'Complete_info' %}" role="menuitem"
                                                     class="border-0 d-inline-flex align-items-center text-white cursor-pointer justify-content-center text-sm w-100 h-100">بازگشت</a>
                         </li>
                         <li aria-hidden="false" aria-disabled="false"
                             class="border-radius-section d-flex justify-content-center align-items-center"><a
-                                href="Test_step3.html" role="menuitem"
+                                href="#" role="menuitem" onclick="myFunction()"
                                 class="border-0 d-inline-flex align-items-center text-white cursor-pointer justify-content-center text-sm w-100 h-100">ادامه</a>
                         </li>
 
                     </ul>
                 </section>
             </form>
+            <script>
+                function myFunction() {
+                    document.getElementById("GFG").submit();
+                }
+            </script>
         </section>
         <img src="/static/img/kisspng-dietary-supplement-weight-loss-weight-gain-health-food-5abb3fd95755a4.8070535115222210173577-removebg-preview.png"
              alt="" class="position-absolute z-index-0 bg-img">
