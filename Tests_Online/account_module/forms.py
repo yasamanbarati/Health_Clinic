@@ -1,5 +1,7 @@
 from django import forms
 from django.core import validators
+from django.core.validators import MinLengthValidator
+
 from . import models
 from .models import User
 
@@ -225,20 +227,24 @@ class EditPanelModelForm(forms.ModelForm):
         super(EditPanelModelForm, self).__init__(*args, **kwargs)
         self.fields['first_name'].required = True
         self.fields['last_name'].required = True
+        self.fields['phone_number'].required = True
 
     class Meta:
         model = User
-        fields = ['first_name', 'last_name', 'email']
+        fields = ['first_name', 'last_name', 'email', 'phone_number']
         widgets = {
             'first_name': forms.TextInput(attrs={
                 'class': 'form-control text-sm text-end w-100 bg-transparent py-0 ps-4 pe-5 text-dark',
-                'placeholder': 'نام  خود را وارد کنید',
+                'placeholder': 'نام خود را وارد کنید',
             }),
             'last_name': forms.TextInput(attrs={
                 'class': 'form-control text-sm text-end w-100 bg-transparent py-0 ps-4 pe-5 text-dark',
-                'placeholder': 'نام خود را وارد کنید',
+                'placeholder': 'نام خانوادگی خود را وارد کنید',
             }),
-
+            'phone_number': forms.NumberInput(attrs={
+                'class': 'form-control text-sm text-end w-100 bg-transparent py-0 ps-4 pe-5 text-dark',
+                'placeholder': 'شماره همراه خود را وارد کنید',
+            }),
             'email': forms.TextInput(attrs={
                 'class': 'form-control text-sm text-end w-100 bg-transparent py-0 ps-4 pe-5 text-dark',
                 'placeholder': 'ایمیل خود را وارد کنید',
@@ -259,6 +265,9 @@ class EditPanelModelForm(forms.ModelForm):
             },
             'email': {
                 'required': 'ایمیل اجباری میباشد ,لطفا آن را وارد کنید.'
+            },
+            'phone_number': {
+                'required': 'شماره همراه میباشد ,لطفا آن را وارد کنید.',
             },
         }
 

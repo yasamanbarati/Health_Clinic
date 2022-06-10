@@ -10,6 +10,19 @@
     <link rel="stylesheet" href="/static/font/newFont.css">
     <link rel="stylesheet" href="/static/css/test_online.css">
     <title>Document</title>
+    <style>
+        /* Chrome, Safari, Edge, Opera */
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        /* Firefox */
+        input[type=number] {
+            -moz-appearance: textfield;
+        }
+    </style>
 </head>
 
 <body>
@@ -17,24 +30,57 @@
     <section class="test row justify-content-center align-items-center border-radius-2xl">
         <section class="test-online col-lg-9 bg-white py-4 px-lg-5 border-radius-section position-relative">
 
-            <form action="{% url 'Complete_info' %}" method="post" id="wizard" role="application" class="wizard mx-5 my-4">
-                <section class="steps">
+            <form novalidate action="{% url 'Complete_info' %}" method="post" id="wizard" role="application" class="wizard mx-5 my-4">
+                <section class="steps">                    {% csrf_token %}
+                    {% if form.last_name.errors %}
+                        <div class="container-fluid"  style="margin: 0px">
+                            <div class="row" style="margin: 0px">
+                                <div class="col-md-10 col-md-offset-1" style="margin: 0px">
+                                    <div class="alert alert-warning alert-dismissible fade in text-center" role="alert" style="opacity: 100% !important;padding: 8px">
+                                        {{ form.last_name.errors }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+                    {% if form.first_name.errors %}
+                        <div class="container-fluid" style="margin: 0px">
+                            <div class="row" style="margin: 0px">
+                                <div class="col-md-10 col-md-offset-1" style="margin: 0px">
+                                    <div class="alert alert-warning alert-dismissible fade in text-center" role="alert" style="opacity: 100% !important; padding: 8px">
+                                        {{ form.first_name.errors }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+                    {% if form.phone_number.errors %}
+                        <div class="container-fluid" style="margin-bottom: 0px">
+                            <div class="row" style="margin: 0px">
+                                <div class="col-md-10 col-md-offset-1" style="margin: 0px">
+                                    <div class="alert alert-warning alert-dismissible fade in text-center" role="alert" style="opacity: 100% !important;padding: 8px">
+                                        {{ form.phone_number.errors }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
                     <ul role="tablist" class=" d-flex justify-content-center mb-3 ">
                         <li role="tab" aria-disabled="false" class="first current" aria-selected="true"><a
-                                id="wizard-t-0" href="Test_step1.html" aria-controls="stepOne"><span
+                                id="wizard-t-0" href="{% url 'Complete_info' %}" aria-controls="stepOne"><span
                                 class="current-info audible">current
                                         step: </span><span class="number">1.</span> <img
                                 src="/static/img/profile-1.1s-200px.png" alt="test_step_img" class="test_step_img">
                             <span class="step-order text-xxs d-block text-center text-black-50 mt-3">مرحله
                                         اول</span></a><img src="/static/img/step-arrow.png" alt="" class="step-arrow">
                         </li>
-                        <li role="tab" aria-disabled="false"><a id="wizard-t-1" href="Test_step2.html"
+                        <li role="tab" aria-disabled="false"><a id="wizard-t-1" href="{% url 'calculate_bmi' %}"
                                                                 aria-controls="wizard-p-1"><span class="number">2.</span> <img
                                 src="/static/img/exam-1.1s-200px.png" alt="test_step_img" class="test_step_img"><span
                                 class="step-order text-xxs d-block text-center text-black-50 mt-3">مرحله
                                         دوم</span></a><img src="/static/img/step-arrow.png" alt="" class="step-arrow">
                         </li>
-                        <li role="tab" aria-disabled="false" class="last"><a id="wizard-t-3" href="Test_step3.html"
+                        <li role="tab" aria-disabled="false" class="last"><a id="wizard-t-3" href="{% url 'Disease_group' %}"
                                                                              aria-controls="wizard-p-3"><span class="number">3.</span> <img
                                 src="/static/img/hospital-1.1s-200px.png" alt="test_step_img" class="test_step_img"><span
                                 class="step-order text-xxs d-block text-center text-black-50 mt-3">مرحله
@@ -42,27 +88,36 @@
                     </ul>
                 </section>
                 <section class="content">
+
                     <!-- SECTION 1 -->
-                    {% csrf_token %}
+
                     <section id="stepOne" role="tabpanel" class="body current" aria-hidden="false">
                         <h3 class="text-2xl text-center text-dark mb-3">جزئیات اساسی</h3>
                         <section class="form-row d-flex mb-3">
-                            <section class="form-holder w-50 me-4 text-end position-relative  d-flex flex-column justify-content-center align-items-end">
-                                <label for="" class="text-sm text-dark"> : نام</label>
-                                <i class="material-icons position-absolute">person</i>
-                                {{ form.first_name }}
-                            </section>
                             <section class="form-holder w-50 me-4 text-end position-relative  d-flex flex-column justify-content-center align-items-end">
                                 <label for="" class="text-sm text-dark"> : نام خانوادگی</label>
                                 <i class="material-icons position-absolute">person</i>
                                 {{ form.last_name }}
                             </section>
+                            <section class="form-holder w-50 me-0 text-end position-relative  d-flex flex-column justify-content-center align-items-end">
+                                <label for="" class="text-sm text-dark">: نام </label>
+                                <i class="material-icons position-absolute">person</i>
+                                {{ form.first_name }}
+                            </section>
                         </section>
-                        <section class="form-holder w-50 me-0 text-end position-relative  d-flex flex-column justify-content-center align-items-end">
-                            <label for="" class="text-sm text-dark"> : ایمیل</label>
-                            <i class="material-icons position-absolute">email</i>
-                            {{ form.email }}
+                        <section class="form-row d-flex mb-3">
+                            <section class="form-holder w-50 me-4 text-end position-relative  d-flex flex-column justify-content-center align-items-end">
+                                <label for="" class="text-sm text-dark"> : ایمیل</label>
+                                <i class="material-icons position-absolute">email</i>
+                                {{ form.email }}
+                            </section>
+                            <section class="form-holder w-50 me-0 text-end position-relative  d-flex flex-column justify-content-center align-items-end">
+                                <label for="" class="text-sm text-dark"> : شماره تماس</label>
+                                <i class="material-icons position-absolute">phone</i>
+                                {{ form.phone_number }}
+                            </section>
                         </section>
+
                         {% comment %}                        <section class="form-row d-flex mb-3">
                             <section class="form-holder w-50 me-4 text-end position-relative  d-flex flex-column justify-content-center align-items-end">
                                 <label for="" class="text-sm text-dark"> : ایمیل</label>
@@ -78,7 +133,7 @@
                         </li>
                         <li aria-hidden="false" aria-disabled="false" class="border-radius-section d-flex justify-content-center align-items-center"><a href="{% url 'calculate_bmi' %}"
                                                                                                                                                         role="menuitem" class="border-0 d-inline-flex align-items-center text-white cursor-pointer justify-content-center text-sm w-100 h-100">ادامه</a></li>
-                        <input type="submit" aria-hidden="false" aria-disabled="false" class="border-radius-section d-flex justify-content-center align-items-center">
+                        <input type="submit">
 
                     </ul>
                 </section>

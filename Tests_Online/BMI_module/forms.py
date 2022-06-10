@@ -2,32 +2,6 @@ from django import forms
 from . import models
 
 
-# class BMI_forms(forms.Form):
-#     weight = forms.IntegerField(
-#         label='وزن ',
-#         widget=forms.NumberInput(attrs={'min': '0'}),
-#         # validators=[
-#         #     validators.MaxLengthValidator(100),
-#         #     validators.EmailValidator,
-#         # ]
-#     )
-#     height = forms.IntegerField(
-#         label='قد ',
-#         widget=forms.NumberInput(attrs={'min': '0'}),
-#         # validators=[
-#         #     validators.MaxLengthValidator(100),
-#         #     validators.EmailValidator,
-#         # ]
-#     )
-#     age = forms.IntegerField(
-#         label='سن ',
-#         widget=forms.NumberInput(attrs={'min': '10'}),
-#         # validators=[
-#         #     validators.MaxLengthValidator(100),
-#         #     validators.EmailValidator,
-#         # ]
-#     )
-
 class BMI_forms(forms.ModelForm):
     class Meta:
         model = models.BMIModels
@@ -49,7 +23,7 @@ class BMI_forms(forms.ModelForm):
             'height': forms.NumberInput(
                 attrs={
                     'class': 'form-control text-sm text-end w-100 bg-transparent  py-0 ps-4 pe-5 text-dark',
-                    'placeholder': 'قد را به سانتی متر وارد کنید',
+                    'placeholder': 'قد را به متر وارد کنید',
                     'max_value': '344',
                     'validation': 'لطفا عدد وارد کنید',
                 }
@@ -83,3 +57,35 @@ class BMI_forms(forms.ModelForm):
             },
             'gender': {'required': 'وارد کردن جنسیت اجباری میباشد ,لطفا آن را وارد کنید'}
         }
+
+
+class commentsModelForm(forms.ModelForm):
+    class Meta:
+        model = models.Comment
+        fields = ['text_comment']
+        widgets = {
+            'text_comment': forms.TextInput()
+        }
+        labels = {
+            'text_comment': 'متن نظر شما'
+        }
+        error_messages = {
+            'text_comment': {
+                'required': 'لطفا نظر خود را وارد کنید.'
+            }
+        }
+
+# sub_choiceCategory = {}
+# for sickness_sub in models.DiseaseGroupModels.objects.filter(caregory_id=None):
+#     for sickness in sickness_sub.diseasegroupmodels_set.all:
+#         sub_choiceCategory[sickness] = sickness
+# sub_choiceCategory = list(sub_choiceCategory.items())
+# sub_choiceCategory = tuple(sub_choiceCategory)
+
+# class sicknessForm(forms.Form):
+#     ChoiceList_category = {}
+#     for item in models.DiseaseGroupModels.objects.filter(caregory_id=None):
+#         ChoiceList_category[item] = item
+#     ChoiceList_category = list(ChoiceList_category.items())
+#     ChoiceList_category = tuple(ChoiceList_category)
+#     item = forms.ChoiceField(choices=ChoiceList_category)

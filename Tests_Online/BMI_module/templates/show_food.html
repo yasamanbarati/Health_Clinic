@@ -1,18 +1,337 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Vendor CSS Files -->
+    <link rel="stylesheet" href="/static/css/material-dashboard.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/charts.css/dist/charts.min.css">
+    <link rel="stylesheet" href="/static/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="/static/css/owl.theme.default.min.css">
+    <!-- Template Main CSS File. -->
+    <link rel="stylesheet" href="/static/font/newFont.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/TestResult.css">
+    <link rel="stylesheet" href="https://unpkg.com/charts.css/dist/charts.min.css">
 </head>
+
 <body>
-<h3>نمایش غذا های پیشنهادی برای شما</h3>
-<ul>
-{% for foo in listFood %}
- <h4>   <li>نام غذا:  <spam>{{ foo.name }}</spam></li></h4>
+<!-- header -->
+<section class="position-relative head mb-4">
+    <header class="bg-transparent position-relative z-index-3">
+        <section class="container">
+            <section class="row justify-content-between align-items-center mt-3">
+                <section class="col-lg-2">
+                    <a class="z-index-1" href="Home.html"><img class="w-100 h-100"
+                                                               src="/static/img/Logo1-removebg-preview.png" alt="logo"></a>
+                </section>
+                <section class="col-lg-5 nav justify-content-evenly align-items-center ">
+                    <section class="nav-item position-relative">
+                        <a class="nav-link active text-md text-dark" aria-current="page" href="#food_program">برنامه
+                            غذایی</a>
+                    </section>
+                    <section class="nav-item position-relative">
+                        <a class="nav-link text-md text-dark" aria-current="page" href="#video_program">ویدئو ما</a>
+                    </section>
+                    <section class="nav-item position-relative">
+                        <a class="nav-link text-md text-dark" aria-current="page" href="#success_program">داستان های
+                            موفق</a>
+                    </section>
+                    <section class="nav-item position-relative">
+                        <a class="nav-link text-md text-dark" aria-current="page" href="#Events">رویداد ها</a>
+                    </section>
+                </section>
+                <section class="col-2 d-flex justify-content-end ">
+                    <button class="btn text-center nav-menu">
+                            <span class="material-icons">
+                                person
+                            </span>
+                    </button>
+                </section>
+                <section class="navbar_side_menu position-absolute top-0">
+                    <section class="d-flex justify-content-end w-100 h-100">
+                        <section class="navbar_menu px-3 pt-3 border-radius-2xl shadow-success">
+                            <section
+                                    class="navbar-responsive-header row justify-content-between align-items-start mx-auto ">
+                                <section
+                                        class="col-9 d-flex flex-column justify-content-center align-items-center mt-3 px-5"
+                                        style="height: 75px;">
+                                    <img class="w-100 h-100"
+                                         src="/static/img/download-icon-person-1324760545186718018_512.png"
+                                         alt="person icon">
+                                    <p class="person_name text-lg text-center text-nowrap">
+                                        یاسمن براتی
+                                    </p>
+                                </section>
+                                <section class="col-3 row justify-content-between align-items-start">
+                                    <button
+                                            class="btn p-2 d-flex justify-content-center align-items-center menu_control_btn mb-0"
+                                            aria-label="Close">
+                                        <i class="material-icons">close</i>
+                                    </button>
+                                </section>
+                            </section>
+                            <section class="navbar-responsive-body mt-5 mx-auto ">
+                                <section class="navbar-responsive-item position-relative pb-3">
+                                    <a href="Update_information.html"
+                                       class=" text-dark text-lg d-flex align-items-center mb-0">
+                                        <i
+                                                class="material-icons  bg-gradient-faded-success-vertical text-neutral shadow-lg rounded-circle z-index-1 p-2 mx-3 ">info</i>
+                                        مشخصات
+                                    </a>
+                                </section>
+                                <section class="navbar-responsive-item position-relative py-3">
+                                    <a href="Test_result.html"
+                                       class=" text-dark text-lg d-flex align-items-center mb-0 ">
+                                        <i
+                                                class="material-icons  bg-gradient-faded-success-vertical text-neutral shadow-lg rounded-circle z-index-1 p-2 mx-3">article</i>
+                                        ارائه نتیجه
+                                    </a>
+                                </section>
+                            </section>
+                        </section>
+                    </section>
+                </section>
+            </section>
+        </section>
+    </header>
+</section>
+<!-- توضیحات -->
+<section class="shadow-xl pb-5">
+    <section class="container">
+        <section class="row justify-content-between">
+            <section class="col-4">
+                <h1 class="infoText">
+                    {{ user.last_name }} عزیز
+                </h1>
+                <h3 class="infoText">
+                    وزن شما : {{ user.weight }} کیلوگرم
+                </h3>
+                <h5 class="infoText">
+                    توده بدنی : {{ user.BMI_value }}
+                </h5>
+                <h6 class="infoText d-inline-block">
+                    وضعیت : {{ user.body_mass_user }}
+                </h6>
+                {% for diss in listDisease.all %}
+                    {{ diss.title }}
+                {% endfor %}
+
+                <span>/</span>
+                {% comment %}<h6 class="infoText d-inline-block">
+                        محدوده وزن سالم : 50.3 تا 68.1 کیلوگرم
+                    </h6>{% endcomment %}
+            </section>
+            {% comment %} <section class="col-6">
+                    <table id="line-example-3" class="charts-css line reverse">
+                        <tbody class="ps-3 pt-2">
+                            <tr>
+                                <td style="--start:0; --size:0.4;"><span class="data">63.250 kg</span></td>
+                            </tr>
+                            <tr>
+                                <td style="--start:0.4; --size:0.2;"><span class="data">61 kg</span></td>
+                            </tr>
+                            <tr>
+                                <td style="--start:0.2; --size:0.6;"><span class="data">60.500 kg</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>{% endcomment %}
+        </section>
+    </section>
+</section>
+<!-- برنامه غذایی کارت هایی با دکمه دانلود که با فشردن ان پی دی اف دانلود میشود -->
+<section class="container mt-5" id="food_program">
+    <section class="services-title test-box-title text-center pb-5 position-relative">
+        <h2 class="text-center text-2xl">برنامه غذایی</h2>
+    </section>
+    <section class="row">
+        {% for food in foods %}
+            <section class="col-4">
+                <div class="card program">
+                    <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
+                        <a class="d-block blur-shadow-image">
+                            <img src="{{ food.image_food.url }}"
+                                 alt="img-blur-shadow" class="img-fluid shadow border-radius-lg">
+                        </a>
+                        <div class="colored-shadow"
+                             style="background-image: url(&quot;https://demos.creative-tim.com/test/material-dashboard-pro//static/img/products/product-1-min.jpg&quot;);">
+                        </div>
+                    </div>
+                    <div class="card-body px-4 pt-6">
+                        <h2 class="text-lg mt-3">
+                            {{ food.name }}
+                        </h2>
+                        <p class="text-md">{{ food.short_description }}
+                        </p>
+                        <a href="{{ food.pdf_food.url }}" download="{{ food.pdf_food.url }}" class="btn bg-gradient-success mt-3 mb-0" target="_blank">دانلود pdf </a>
+                    </div>
+                </div>
+            </section>
+        {% endfor %}
 
 
-{% endfor %}
-   </ul>
+    </section>
+</section>
+<!-- وبدئو ها  -->
+<section class="container mt-5" id="video_program">
+    <section class="services-title test-box-title text-center pb-6 position-relative">
+        <h2 class="text-center text-2xl">ویدئو ها</h2>
+    </section>
+    <section class="row mt-3">
+        {% for video in video_res %}
+            <section class="col-4">
+                <div class="card program" data-animation="true">
+                    <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
+                        <a class="d-block blur-shadow-image">
+                            <video class="w-100 h-100" controls
+                                   poster="https://demos.creative-tim.com/test/material-dashboard-pro/assets/img/products/product-1-min.jpg"
+                                   src="{{ video.video_result.url }}">
+                                Your browser does not support the video tag.
+                            </video>
+                        </a>
+                        <div class="colored-shadow"
+                             style="background-image: url(&quot;https://demos.creative-tim.com/test/material-dashboard-pro/assets/img/products/product-1-min.jpg&quot;);">
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="d-flex mt-n6 mx-auto">
+                            <h2 class="text-lg mt-3 text-center">
+                                {{ video.name}}
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        {% endfor %}
 
+
+    </section>
+</section>
+<!-- داستان هی موفق -->
+<section class="container mt-5" id="success_program">
+    <section class="services-title test-box-title text-center pb-2 position-relative">
+        <h2 class="text-center text-2xl">داستان های موفق</h2>
+    </section>
+    <section class="row mt-3">
+        {% for comment in comments %}
+              <section class="col-4">
+            <div class="successCard card card-background program">
+                <div class="full-background">
+                    <img class="w-100 h-100"
+                         src="https://images.unsplash.com/photo-1560157368-946d9c8f7cb6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1951&q=80"
+                         alt="Success Stories">
+                </div>
+                <div class="card-body pt-8">
+                    {% comment %}<h2 class="text-lg mt-3 text-light">
+                        شخص شماره 01
+                    </h2>{% endcomment %}
+                    <p class="text-sm text-light mb-0">{{ comment.text_comment }} </p>
+                </div>
+            </div>
+        </section>
+        {% endfor %}
+
+
+    </section>
+</section>
+<!-- روبداد ها -->
+<section class="container mt-5" id="Events">
+    <section class="services-title test-box-title text-center pb-2 position-relative">
+        <h2 class="text-center text-2xl">روبداد ها</h2>
+    </section>
+    <div class="row">
+        <section class="col-6 rounded-1">
+            <div class="card mb-3 program" style="height: 200px;">
+                <div class="row g-0 h-100">
+                    <div class="col-md-4">
+                        <img src="https://healthcoach.stylemixthemes.com/wp-content/uploads/2015/09/Fotolia_78843187_Subscription_Monthly_M.jpg"
+                             class="img-fluid rounded-start w-100 h-100" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body row justify-content-between align-items-start h-100">
+                            <div class="col-9 d-flex flex-column justify-content-between h-100">
+                                <h5 class="card-title text-2xl">جشنواره بین المللی یوگا "آسانا در هوای آزاد"</h5>
+                                <div>
+                                    <p class="card-text text-sm mb-0">
+                                        8:00 AM - 9:00 PM
+                                    </p>
+                                    <p class="card-text text-sm">
+                                        1010 Berkler ave, Brooklyn, New York
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-2 text-center shadow-card">
+                                    <span class="text-2xl text-light">9
+                                        <span class="text-nowrap text-light">SEP</span>
+                                    </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="col-6 rounded-1">
+            <div class="card mb-3 program" style="height: 200px;">
+                <div class="row g-0 h-100">
+                    <div class="col-md-4">
+                        <img src="https://healthcoach.stylemixthemes.com/wp-content/uploads/2015/07/Fotolia_73042620_Subscription_Monthly_M.jpg"
+                             class="img-fluid rounded-start w-100 h-100" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body row justify-content-between align-items-start h-100">
+                            <div class="col-9 d-flex flex-column justify-content-between h-100">
+                                <h5 class="card-title text-2xl">مسابقه کلاسیک</h5>
+                                <div>
+                                    <p class="card-text text-sm mb-0">
+                                        6:00 PM - 11:00 PM
+                                    </p>
+                                    <p class="card-text text-sm">
+                                        Parkville High, Baltimore Maryland
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-2 text-center shadow-card">
+                                    <span class="text-2xl text-light">16
+                                        <span class="text-nowrap text-light">JUL</span>
+                                    </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</section>
+<footer class="position-relative mt-5">
+    <section class="container">
+         <form action="{% url 'show_foods' %}" method="post">
+             {% csrf_token %}
+        <section class="row justify-content-center">
+
+            <section class="story col-6 d-flex flex-column">
+                <h2 class="text-center text-2xl">داستان خودت با ما به اشتراک بزار</h2>
+                {{ comment_form.text_comment }}
+                <button type="submit" class="btn border-radius-section d-flex justify-content-center align-items-center mt-4">ارسال</button>
+            </section>
+
+        </section>
+    </form>
+    </section>
+    <section class="container">
+    </section>
+    <img src="/static/img/GreenBlueBorder-1024x221.png" alt="cover" class="position-absolute w-100 footer_cover">
+    <section class="w-100 d-flex justify-content-center align-items-center z-index-1 position-absolute mt-7">
+        <span class="text-sm text-dark"> تمامی حقوق این سایت مختص به تیمslima_2022 می باشد</span>
+    </section>
+</footer>
 </body>
+<script src="/static/js/jquery.min.js"></script>
+<script src="/static/js/menu.js"></script>
+
 </html>

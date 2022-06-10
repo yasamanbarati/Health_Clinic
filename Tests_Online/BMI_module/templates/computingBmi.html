@@ -62,13 +62,12 @@
 </div>
 {% endif %}
     <section class="test row justify-content-center align-items-center border-radius-2xl position-relative">
-
         <section class="test-online col-lg-8 bg-white p-5 border-radius-section">
             <form novalidate action="{% url 'calculate_bmi' %}" method="post" id="wizard" role="application" class="wizard mx-5 my-2">
                 <section class="steps">
                     <ul role="tablist" class=" d-flex justify-content-center mb-3 ">
                         <li role="tab" aria-disabled="false" class="first current" aria-selected="true"><a
-                                id="wizard-t-0" href="Test_step1.html" aria-controls="stepOne"><span
+                                id="wizard-t-0" href="{% url 'Complete_info' %}" aria-controls="stepOne"><span
                                 class="current-info audible">current
                                         step: </span><span class="number">1.</span> <img
                                 src="/static/img/profile-1.1s-200px.png" alt="test_step_img"
@@ -76,14 +75,14 @@
                             <span class="step-order text-xxs d-block text-center text-black-50 mt-3">مرحله
                                         اول</span></a><img src="/static/img/step-arrow.png" alt="" class="step-arrow">
                         </li>
-                        <li role="tab" aria-disabled="false"><a id="wizard-t-1" href="Test_step2.html"
+                        <li role="tab" aria-disabled="false"><a id="wizard-t-1" href="{% url 'calculate_bmi' %}"
                                                                 aria-controls="wizard-p-1"><span class="number">2.</span> <img
                                 src="/static/img/exam-1.1s-200px.png" alt="test_step_img"
                                 class="test_step_img"><span
                                 class="step-order text-xxs d-block text-center text-black-50 mt-3">مرحله
                                         دوم</span></a><img src="/static/img/step-arrow.png" alt="" class="step-arrow">
                         </li>
-                        <li role="tab" aria-disabled="false" class="last"><a id="wizard-t-3" href="Test_step3.html"
+                        <li role="tab" aria-disabled="false" class="last"><a id="wizard-t-3" href="{% url 'Disease_group' %}"
                                                                              aria-controls="wizard-p-3"><span class="number">3.</span> <img
                                 src="/static/img/hospital-1.1s-200px.png" alt="test_step_img"
                                 class="test_step_img"><span
