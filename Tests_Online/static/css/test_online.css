@@ -13,6 +13,7 @@
 }
 
 body {
+    font-family: 'Vazir';
     font-size: 14px;
     margin: 0;
     color: #999;
@@ -188,23 +189,6 @@ input[type="checkbox"] + label:before {
 .dropdown-menu {
     inset: 25px auto auto 36px !important;
 }
-.dis_box_span{
-    background-color: var(--bg-01);
-    font-size: .875rem;
-    font-weight: 400;
-    color: var(--bg-light);
-    text-align: end;
-    border: 1px solid var(--bg-01);
-    padding: 5px;
-    border-radius: 6px;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-direction: row-reverse;
-    white-space: nowrap;
-    margin-right: 3px;
-    margin-top: 3px;
-}
 .dis_box_btn{
     margin: 0;
     padding: 0;
@@ -219,7 +203,8 @@ input[type="checkbox"] + label:before {
 .dis_box_btn i{
     font-size: 1.3rem;
 }
-.filter_close{
+.filter_close,
+.filter_close1{
     left: 10px;
     top: 38px;
     position: absolute;
@@ -237,9 +222,52 @@ input[type="checkbox"] + label:before {
     right: 8px;
     top: 38px;
 }
-.filter_close{
+.filter_close,
+.filter_close1{
     display: none;
 }
 .showIcon{
     display: block;
+}
+.tagify{
+    border-color: transparent!important;
+    direction: rtl;
+}
+.tagify--outside{
+    border: 0;
+}
+.tagify--outside .tagify__input{
+  order: -1;
+  flex: 100%;
+  border: 1px solid var(--tags-border-color);
+  margin-bottom: 1em;
+  transition: .1s;
+}
+.tagify--outside .tagify__input:hover{ border-color:var(--tags-hover-border-color); }
+.tagify--outside.tagify--focus .tagify__input{
+  transition:0s;
+  border-color: var(--tags-focus-border-color);
+}
+.tagify__tag{
+    background-color: var(--bg-01);
+    font-size: .875rem;
+    font-weight: 400;
+    color: var(--bg-light);
+    text-align: end;
+    border: 1px solid var(--bg-01);
+    padding: 5px;
+    border-radius: 6px;
+    justify-content: space-evenly;
+    flex-direction: row-reverse;
+    white-space: nowrap;
+    direction: ltr;
+}
+::before {
+    box-shadow: var(--bg-01) !important;
+}
+.tagify__tag>div>*,
+.tagify__tag__removeBtn::after {
+    color: var(--bg-light);
+    font-size: 1rem;
+    font-weight: 600;
 }
