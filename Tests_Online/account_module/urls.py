@@ -10,5 +10,7 @@ urlpatterns = [
     path('Reset_pass/<activeaccount>/', views.ReesetPassView.as_view(), name='reset_pass_page'),
     path('activate_account/<activeCode>/', views.ActiveAccountView.as_view(), name='activate_account'),
     # path('Complete_register/', views.CompleteRegisterView.as_view(), name='CompleteRegister')
-    path('Complete_info/', views.EditUserProfilePage.as_view(), name='Complete_info')
+    #path('Complete_info/', views.EditUserProfilePage.as_view(), name='Complete_info')
+    path('Complete_info/', views.UpdateProfile.as_view(), name='Complete_info'),
+
 ]
