@@ -18,13 +18,13 @@ from django.contrib.auth.decorators import login_required
 class RegisterView(View):
 
     def get(self, request):
-        if request.user.is_authenticated:
-            logout(request)
-
         register_form = RegisterForms()
         return render(request, 'login_page.html', {'register_form': register_form})
 
     def post(self, request):
+        if request.user.is_authenticated:
+            logout(request)
+
         register_form = RegisterForms(request.POST)
         if register_form.is_valid():
             user_emial = register_form.cleaned_data.get('email')
@@ -51,8 +51,6 @@ class RegisterView(View):
 class LoginView(View):
 
     def get(self, request):
-        if request.user.is_authenticated:
-            logout(request)
 
         login_form = LoginForms()
         context = {
@@ -62,6 +60,9 @@ class LoginView(View):
         return render(request, 'login.html', context)
 
     def post(self, request: HttpRequest):
+        if request.user.is_authenticated:
+            logout(request)
+
         login_form = LoginForms(request.POST)
         if login_form.is_valid():
             user_email = login_form.cleaned_data.get('email')
