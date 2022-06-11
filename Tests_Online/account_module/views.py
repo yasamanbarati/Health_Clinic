@@ -2,16 +2,18 @@ from django.contrib.auth import login, logout
 from django.http import Http404, HttpRequest
 from django.shortcuts import render, redirect
 from django.template import RequestContext
-from django.urls import reverse
+from django.urls import reverse, reverse_lazy
 from django.views import View
 from django.views.generic import CreateView
+from requests import request
 from . import forms
 from account_module.forms import RegisterForms, LoginForms, forgetpasswordForms, resetPasswordForms
 from .models import User
 from django.utils.crypto import get_random_string
 from utils.email_service import send_email
 from django.contrib.auth.hashers import make_password
-
+from django.views.generic import UpdateView
+from django.contrib.auth.decorators import login_required
 
 class RegisterView(View):
 
@@ -239,3 +241,20 @@ class EditUserProfilePage(View):
             'user': current_user
         }
         return render(request, 'complates_info_user/complates_info.html', context)
+
+
+
+class UpdateProfile(UpdateView):
+    model = User
+    template_name = 'update_profile.html'
+    form_class = forms.UpdateprofileForm
+    success_url = reverse_lazy('home_page')
+
+    def get_object(self):
+        return User.objects.get(pk = self.request.user.pk)
+
+
+    def get_form_kwargs(self):
+        kwargs = super(UpdateProfile, self).get_form_kwargs()
+        kwargs.update({ 'request' : self.request })
+        return kwargs

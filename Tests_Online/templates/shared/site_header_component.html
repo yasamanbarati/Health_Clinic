@@ -4,7 +4,7 @@
         <section class="container">
             <section class="row justify-content-between align-items-center mt-3">
                 <section class="col-lg-2">
-                    <a class="z-index-1" href="Home.html"><img class="w-100 h-100"
+                    <a class="z-index-1" href="{% url 'home_page' %}"><img class="w-100 h-100"
                             src="/static/img/Logo1-removebg-preview.png" alt="logo"></a>
                 </section>
                 <section class="col-lg-5 nav justify-content-evenly align-items-center ">
@@ -24,6 +24,18 @@
                             انلاین</a>
                     </section>
                 </section>
+
+                {% if request.user.is_authenticated %}
+                <section class="col-lg-3 row justify-content-end align-items-baseline">
+                    <section class="col-md-4">
+                        <a class="d-flex align-items-center text-md text-dark nav-link" href="{% url 'Complete_info'  %}">ویرایش</a>
+                    </section>
+                    <section
+                        class="singUp-box col-md-4 border border-radius-bottom-end-2xl border-radius-top-start-2xl">
+                        <a class="d-flex align-items-center text-md text-dark nav-link" href="{% url 'logOut_page'  %}">خروج</a>
+                    </section>
+                </section>                
+                {% else %}
                 <section class="col-lg-3 row justify-content-end align-items-baseline">
                     <section class="col-md-4">
                         <a class="d-flex align-items-center text-md text-dark nav-link" href="{% url 'logIn_page'  %}">ورود</a>
@@ -33,6 +45,8 @@
                         <a class="d-flex align-items-center text-md text-dark nav-link" href="{% url 'register_page'  %}">عضویت</a>
                     </section>
                 </section>
+                {% endif %}
+
                 <section class="col-lg-1 col-2 d-none align-items-center">
                     <button
                         class="btn text-center py-2 px-3 d-flex align-items-center justify-content-center mb-0 nav-menu">
