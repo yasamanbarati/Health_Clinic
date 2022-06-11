@@ -158,12 +158,12 @@ label {
 .actions li:hover {
     background: var(--bg-01);
 }
-input[type="radio"],
-input[type="checkbox"] {
-    /* Hide original inputs */
-    visibility: hidden;
-    position: absolute;
-}
+/*input[type="radio"],*/
+/*input[type="checkbox"] {*/
+/*    !* Hide original inputs *!*/
+/*    visibility: hidden;*/
+/*    position: absolute;*/
+/*}*/
 input[type="radio"] + label:before,
 input[type="checkbox"] + label:before {
     height: 12px;

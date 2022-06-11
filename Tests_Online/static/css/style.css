@@ -8,7 +8,7 @@
   --bg-light: #fff;
 }
 body {
-  font-family: Vazir;
+  font-family: 'Vazir';
   direction: rtl;
 }
 h1,
@@ -18,7 +18,10 @@ h4,
 h5,
 h6,
 p,
-a {
+a,
+label,
+button,
+i {
   color: var(--bg-dark);
 }
 a {
@@ -46,7 +49,7 @@ a {
 }
 .navbar_side_menu {
   display: none;
-  left: 10px;
+  left: 0px;
 }
 .modal-open {
   display: block;
@@ -367,6 +370,10 @@ a {
 }
 .footer-media_icon:hover i{
   color: var(--bg-02);
+}
+.person_name{
+  font-family: 600;
+  color: var(--bg-dark);
 }
 @keyframes up-down {
   0% {

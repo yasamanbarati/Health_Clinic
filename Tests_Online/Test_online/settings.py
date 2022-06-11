@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
-
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -41,8 +41,13 @@ INSTALLED_APPS = [
     'Home_module',
     # 'our_services_module',
     'django_render_partial',
+# <<<<<<< HEAD
+#     'sorl.thumbnail',
+# =======
+#     'team_info_module',
     'social_django',
-
+# >>>>>>> fdc710e870f084bec1259f6636b1514fa750b4bb
+#     'social_django',
 ]
 
 MIDDLEWARE = [
@@ -121,9 +126,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = [
-    BASE_DIR / 'static'
-]
+# STATICFILES_DIRS = [
+#     BASE_DIR / 'static'
+# ]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
@@ -140,7 +145,7 @@ EMAIL_HOST_PASSWORD = 'salima_information183218'
 EMAIL_USE_TLS = True
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 # -------------------------------------------------------------
-MEDIA_ROOT = BASE_DIR / 'uploads'
+# MEDIA_ROOT = BASE_DIR / 'uploads'
 MEDIA_URL = '/medias/'
 
 # STATICFILES_DIRS = [
@@ -165,3 +170,7 @@ SOCIAL_AUTH_URL_NAMESPACE = 'social'
 
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '963779639903-r0le0q1hm7u6rbb8b4a9brq5631jevi3.apps.googleusercontent.com'
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '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'
+
+# برای اپلود فایل
+STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
+MEDIA_ROOT = os.path.join(BASE_DIR, 'uplodes')
