@@ -386,7 +386,6 @@ class UpdateprofileForm(forms.ModelForm):
         weight = cleaned_data.get('weight')
         weight = UpdateprofileForm.convert_to_english(weight)
 
-
         if len(weight) != 0:
                 if str.isdigit(weight):
                     if float(weight) < 350 and float(weight) > 0:
